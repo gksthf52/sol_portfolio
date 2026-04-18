@@ -1,0 +1,18 @@
+@use 'reset';
+@use 'animations';
+
+// 공통 레이아웃
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: $spacing-section 0;
+
+  @media (max-width: $bp-tablet) {
+    padding: $spacing-section-mo 0;
+  }
+}
