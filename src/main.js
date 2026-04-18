@@ -1,5 +1,5 @@
 import "./styles/main.scss";
-import { initAnimations } from "gsap.js";
+import { initAnimations } from "./scripts/gsap";
 
 document.addEventListener("DOMContentLoaded", () => {
   initAnimations();
