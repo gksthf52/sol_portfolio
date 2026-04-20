@@ -1,17 +1,33 @@
 @use "variables" as *;
 @use "reset";
+@use "intro";
 
-.container {
+a.skip-nav {
+  position: absolute;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  padding: 12px 20px;
+  background-color: $color-point;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 0 0 8px 0;
+  white-space: nowrap;
+  text-align: center;
+
+  // 평소엔 화면 밖으로 숨김
+  transform: translateY(-100%);
+
+  // Tab 포커스 시 등장
+  &:focus {
+    transform: translateY(0);
+    transition: transform 0.2s ease;
+  }
 }
 
-section {
-  padding: 120px 0;
-
-  @media (max-width: 768px) {
-    padding: 80px 0;
-  }
+.wrap {
+  opacity: 0;
+  visibility: hidden;
 }

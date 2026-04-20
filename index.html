@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="홍길동 프론트엔드 퍼블리셔 포트폴리오" />
-    <title>홍길동 | Frontend Publisher</title>
+    <meta name="description" content="퍼블리셔 한솔 포트폴리오" />
+    <title>한솔 | Publisher</title>
 
     <!-- Pretendard 폰트 -->
     <link
@@ -13,33 +13,66 @@
     />
   </head>
   <body>
-    <!-- Hero -->
-    <section id="hero">
-      <div class="container">
-        <h1 class="fade-up">Publisher 한솔입니다</h1>
+    <!-- 스킵 네비게이션 -->
+    <a href="#hero" class="skip-nav">본문 바로가기</a>
+
+    <!-- 인트로 애니메이션 영역 -->
+    <div id="intro">
+      <div class="text_box">
+        <div class="text_box_area">
+          <span class="name">Hansol</span>
+          <span class="pf">Portfolio</span>
+        </div>
+        <span class="dot">.</span>
       </div>
-    </section>
+    </div>
 
-    <!-- About -->
-    <section id="about">
-      <div class="container fade-up"></div>
-    </section>
+    <div id="wrap" class="wrap">
+      <header class="header">
+        <h1 class="logo">
+          <a href="/">Hansol's Portfolio</a>
+        </h1>
 
-    <!-- Works -->
-    <section id="works">
-      <div class="container fade-up"></div>
-    </section>
+        <nav class="nav" aria-label="메인 메뉴">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#about">About</a></li>
+            <li class="nav__item"><a href="#works">Works</a></li>
+            <li class="nav__item"><a href="#skills">Skills</a></li>
+            <li class="nav__item"><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
 
-    <!-- Skills -->
-    <section id="skills">
-      <div class="container fade-up"></div>
-    </section>
+      <!-- Hero -->
+      <section id="hero">
+        <div class="container">
+          <h1 class="fade-up">Publisher 한솔입니다</h1>
+        </div>
+      </section>
 
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container fade-up"></div>
-    </section>
+      <!-- About -->
+      <section id="about">
+        <div class="container fade-up"></div>
+      </section>
 
-    <script type="module" src="/src/main.js"></script>
+      <!-- Works -->
+      <section id="works">
+        <div class="container fade-up"></div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills">
+        <div class="container fade-up"></div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="container fade-up"></div>
+      </section>
+
+      <footer class="footer"></footer>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>

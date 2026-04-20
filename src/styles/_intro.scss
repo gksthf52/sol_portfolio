@@ -1,0 +1,26 @@
+#intro {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 9999;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .text_box {
+    display: flex;
+    gap: 10px;
+    font-size: 40px;
+
+    &_area {
+      display: flex;
+      gap: 10px;
+      overflow: hidden;
+    }
+
+    span {
+      display: block;
+    }
+  }
+}
