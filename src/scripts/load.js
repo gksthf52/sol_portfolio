@@ -19,10 +19,9 @@ async function loadData() {
 
 export async function init() {
   const intro = playIntro();
-  const data = loadData(); // 필요하면
-
+  const data = loadData();
   await Promise.all([intro, data]);
 
-  // showWrap();
-  // initAnimations();
+  showWrap();
+  initAnimations();
 }

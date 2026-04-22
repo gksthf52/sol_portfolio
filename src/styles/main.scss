@@ -27,7 +27,76 @@ a.skip-nav {
   }
 }
 
+section {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.container {
+  // max-width: 1200px;
+  width: 100%;
+  padding: 0 30px;
+}
+
 .wrap {
   opacity: 0;
   visibility: hidden;
+  color: #111;
+}
+
+.header {
+  position: fixed;
+  inset: 20px 30px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  @extend .red-hat-display;
+  font-size: 20px;
+  text-transform: uppercase;
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .nav {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    .nav_list {
+      display: flex;
+      gap: 50px;
+    }
+  }
+
+  .util {
+    position: absolute;
+    right: 0;
+  }
+}
+
+#hero {
+  position: relative;
+  height: 100vh;
+  align-items: center;
+  text-align: center;
+
+  .center_box {
+    .fade-list {
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+
+      .fade-item {
+        @extend .bbh-hegarty;
+        font-size: clamp(28px, 12vw, 190px);
+        line-height: 1;
+      }
+    }
+  }
+
+  .bottom_text {
+    position: absolute;
+    bottom: 30px;
+  }
 }
