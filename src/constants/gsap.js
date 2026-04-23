@@ -7,10 +7,17 @@ export const EASE = {
   in2: "power2.in",
   in3: "power3.in",
   in4: "power4.in",
+  expoin: "expo.in",
+  expoout: "expo.out",
 };
 
 export const DURATION = {
-  text: 0.6,
+  text: 0.4,
   delay: 0.2,
-  scale: 0.8,
+  delay2: 0.4,
+  delay3: 0.6,
+  introText: 0.6,
+  heroText: 0.8,
+  dotScale: 0.6,
+  stagger: 0.02,
 };

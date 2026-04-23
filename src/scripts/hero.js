@@ -5,7 +5,7 @@ import { EASE, DURATION } from "../constants/gsap.js";
 gsap.registerPlugin(ScrollTrigger);
 
 // hero
-const HeroTextAni = () => {
+const heroTextAni = () => {
   const HeroFadeList = document.querySelectorAll("#hero .fade-list");
 
   if (HeroFadeList) {
@@ -17,10 +17,10 @@ const HeroTextAni = () => {
       gsap.to(fadeItem, {
         y: 0,
         opacity: 1,
-        ease: EASE.in1,
-        duration: 0.8,
-        stagger: 0.04,
-        delay: DURATION.delay,
+        ease: EASE.expoout,
+        duration: DURATION.heroText,
+        stagger: DURATION.stagger,
+        delay: DURATION.delay2,
       });
     });
   }
@@ -36,8 +36,7 @@ const HeaderTextAni = () => {
       y: 0,
       opacity: 1,
       ease: EASE.in4,
-      duration: 0.4,
-      delay: DURATION.delay,
+      duration: DURATION.text,
     });
   }
 };
@@ -52,15 +51,14 @@ const BottomTextAni = () => {
       y: 0,
       opacity: 1,
       ease: EASE.in4,
-      duration: 0.4,
-      delay: DURATION.delay,
+      duration: DURATION.text,
     });
   }
 };
 
 // 메인 진입 애니메이션
 export function showWrap() {
-  HeroTextAni();
+  heroTextAni();
   HeaderTextAni();
   BottomTextAni();
 }

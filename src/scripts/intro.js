@@ -62,24 +62,23 @@ export function playIntro() {
     tl.to(".text_box span.name", {
       opacity: 1,
       y: 0,
-      duration: DURATION.text,
       ease: EASE.out1,
+      duration: DURATION.introText,
     });
 
     // // 2. Portfolio 텍스트 등장
     tl.to(".text_box span.pf", {
       opacity: 1,
       y: 0,
-      duration: DURATION.text,
       ease: EASE.out1,
-      delay: DURATION.delay,
+      duration: DURATION.introText,
     });
 
     // // 3. dot 등장
     tl.to(".dot", {
       opacity: 1,
-      duration: DURATION.text,
       ease: EASE.out1,
+      duration: DURATION.introText,
     });
 
     // // 4. dot 확장
@@ -94,8 +93,8 @@ export function playIntro() {
         if (!info) return "60% 68%";
         return getDotTransformOrigin(info);
       },
-      duration: DURATION.scale,
       ease: EASE.in4,
+      duration: DURATION.dotScale,
     });
   });
 }
