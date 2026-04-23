@@ -62,15 +62,33 @@ section {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
+    // padding: 15px 30px;
+    // border-radius: 61px;
+    // background: #7c89877d;
+
     .nav_list {
       display: flex;
-      gap: 50px;
+      gap: 40px;
     }
   }
 
   .util {
     position: absolute;
     right: 0;
+    // padding: 10px 39px;  124, 137, 135, 0.4901960784);
+    display: flex;
+    align-items: center;
+    background: $color-bg-dark;
+    border-radius: 6px;
+    padding: 0 6px;
+    height: 45px;
+    .me {
+      // width: 50px;
+      // height: 50px;
+      img {
+        height: 40px;
+      }
+    }
   }
 }
 

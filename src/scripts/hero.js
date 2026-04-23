@@ -4,28 +4,6 @@ import { EASE, DURATION } from "../constants/gsap.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// hero
-const heroTextAni = () => {
-  const HeroFadeList = document.querySelectorAll("#hero .fade-list");
-
-  if (HeroFadeList) {
-    HeroFadeList.forEach((item, index) => {
-      const fadeItem = item.querySelectorAll(".fade-item");
-      const setY = window.innerWidth > 768 ? 180 : 90;
-
-      gsap.set(fadeItem, { y: setY, opacity: 0.2 });
-      gsap.to(fadeItem, {
-        y: 0,
-        opacity: 1,
-        ease: EASE.expoout,
-        duration: DURATION.heroText,
-        stagger: DURATION.stagger,
-        delay: DURATION.delay2,
-      });
-    });
-  }
-};
-
 // header
 const HeaderTextAni = () => {
   const headerContent = document.querySelectorAll(".header");
@@ -56,6 +34,27 @@ const BottomTextAni = () => {
   }
 };
 
+// hero
+const heroTextAni = () => {
+  const HeroFadeList = document.querySelectorAll("#hero .fade-list");
+
+  if (HeroFadeList) {
+    HeroFadeList.forEach((item, index) => {
+      const fadeItem = item.querySelectorAll(".fade-item");
+      const setY = window.innerWidth > 768 ? 180 : 90;
+
+      gsap.set(fadeItem, { y: setY, opacity: 0.2 });
+      gsap.to(fadeItem, {
+        y: 0,
+        opacity: 1,
+        ease: EASE.expoout,
+        duration: DURATION.heroText,
+        stagger: DURATION.stagger,
+        delay: DURATION.delay3,
+      });
+    });
+  }
+};
 // 메인 진입 애니메이션
 export function showWrap() {
   heroTextAni();
