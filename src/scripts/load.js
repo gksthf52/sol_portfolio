@@ -1,7 +1,8 @@
-import { initAnimations, playIntro, showWrap } from "./gsap.js";
+import { playIntro } from "./intro.js";
+import { showWrap } from "./hero.js";
 
 async function loadData() {
-  const MIN_TIME = 800;
+  const MIN_TIME = 300;
   const images = Array.from(document.images);
   const delay = new Promise((res) => setTimeout(res, MIN_TIME));
   const preload = Promise.all(
@@ -23,5 +24,4 @@ export async function init() {
   await Promise.all([intro, data]);
 
   showWrap();
-  initAnimations();
 }

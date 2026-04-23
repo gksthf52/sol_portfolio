@@ -40,8 +40,6 @@ section {
 }
 
 .wrap {
-  opacity: 0;
-  visibility: hidden;
   color: #111;
 }
 
@@ -52,8 +50,9 @@ section {
   align-items: center;
   height: 50px;
   @extend .red-hat-display;
-  font-size: 20px;
+  font-size: 14px;
   text-transform: uppercase;
+  z-index: 10;
 
   .logo {
     font-size: 30px;
