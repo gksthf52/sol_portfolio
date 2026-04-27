@@ -1,5 +1,6 @@
 import { playIntro } from "./intro.js";
-import { showWrap } from "./hero.js";
+import { showHero } from "./hero.js";
+import { careerHoverAction, staggerAni, staggerSideAni } from "./career.js";
 
 async function loadData() {
   const MIN_TIME = 300;
@@ -19,9 +20,15 @@ async function loadData() {
 }
 
 export async function init() {
-  const intro = playIntro();
-  const data = loadData();
-  await Promise.all([intro, data]);
+  // intro
+  // const intro = playIntro();
+  // const data = loadData();
+  // await Promise.all([intro, data]);
 
-  showWrap();
+  // hero
+  showHero();
+  // career
+  careerHoverAction();
+  staggerAni();
+  staggerSideAni();
 }

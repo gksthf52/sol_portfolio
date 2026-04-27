@@ -1,10 +1,10 @@
 @use "variables" as *;
-@use "reset";
+@use "font" as *;
 
 #intro {
   position: fixed;
   inset: 0;
-  background-color: $color-bg-dark;
+  background-color: $color-dark;
   z-index: 9999;
   overflow: hidden;
   display: flex;
@@ -15,18 +15,16 @@
     position: relative;
     display: flex;
     gap: 10px;
-    font-size: 40px;
+    @include fontStyle("BBH Hegarty", 40px);
     padding-right: 20px;
-    @extend .bbh-hegarty;
 
     &_area {
       display: flex;
       gap: 10px;
       overflow: hidden;
-    }
-
-    span {
-      display: block;
+      span {
+        color: $color-light;
+      }
     }
 
     .dot {

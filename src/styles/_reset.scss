@@ -1,5 +1,5 @@
 @use "variables" as *;
-@use "font";
+@use "font" as *;
 *,
 *::before,
 *::after {
@@ -15,8 +15,8 @@ html {
 
 body {
   font-family: $font-main;
-  background-color: $color-bg-light;
-  color: $color-text;
+  background-color: $color-light;
+  color: $color-dark;
   line-height: 1.6;
   overflow-x: hidden;
 }

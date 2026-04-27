@@ -55,9 +55,38 @@ const heroTextAni = () => {
     });
   }
 };
+
+// header util flip
+const initCardFlip = () => {
+  document.querySelectorAll(".card").forEach((card) => {
+    const inner = card.querySelector(".card_inner");
+    let isFlipped = false;
+
+    card.addEventListener("mouseenter", () => {
+      gsap.to(inner, {
+        rotateY: 180,
+        duration: DURATION.flip,
+        ease: EASE.inout2,
+      });
+      isFlipped = true;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      gsap.to(inner, {
+        rotateY: 0,
+        duration: DURATION.flip,
+        ease: EASE.inout2,
+      });
+      isFlipped = false;
+    });
+  });
+};
+
 // 메인 진입 애니메이션
-export function showWrap() {
+export function showHero() {
   heroTextAni();
   HeaderTextAni();
   BottomTextAni();
+
+  initCardFlip();
 }

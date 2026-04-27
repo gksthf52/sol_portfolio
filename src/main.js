@@ -1,7 +1,12 @@
+// css import
 import "./styles/main.scss";
+
+// js import
 import { init } from "./scripts/load.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  window.scrollTo(0, 0);
+
   init();
 });
 

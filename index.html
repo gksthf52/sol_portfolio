@@ -19,7 +19,7 @@
     <a href="#hero" class="skip-nav">본문 바로가기</a>
 
     <!-- 인트로 애니메이션 영역 -->
-    <div id="intro">
+    <!-- <div id="intro">
       <div class="text_box">
         <div class="text_box_area">
           <span class="name">Hansol</span>
@@ -27,28 +27,34 @@
         </div>
         <span class="dot"></span>
       </div>
-    </div>
+    </div> -->
 
     <!-- 본문 영역 -->
     <div id="wrap" class="wrap">
       <header class="header">
         <h1 class="logo">
-          <a href="/">HS</a>
-          <!-- <a href="/">Hansol's Portfolio</a> -->
+          <a href="/" aria-label="Hansol's Portfolio 홈">HS</a>
         </h1>
 
-        <nav class="nav" aria-label="메인 메뉴">
+        <nav class="nav">
           <ul class="nav_list">
             <li class="nav_item"><a href="#career">Career</a></li>
-            <li class="nav_item"><a href="#skills">Skills</a></li>
             <li class="nav_item"><a href="#works">Works</a></li>
+            <li class="nav_item"><a href="#skills">Skills</a></li>
           </ul>
         </nav>
 
-        <div class="util" aria-label="나의 정보">
-          <div class="me">
-            <img src="/images/me.png" alt="" />
-          </div>
+        <div class="util">
+          <a href="#" class="about_me card">
+            <div class="card_inner">
+              <div class="card_front">
+                <img src="/images/me.png" alt="내 프로필 이미지" />
+              </div>
+              <div class="card_back">
+                <span>about</span>
+              </div>
+            </div>
+          </a>
         </div>
       </header>
 
@@ -86,25 +92,61 @@
 
       <!-- Career -->
       <section id="career">
-        <div class="container">
-          <h2>career</h2>
-          <div class="container fade-up"></div>
+        <div class="container stagger">
+          <h2 class="section-title stagger-item">career</h2>
+          <div class="career_list">
+            <ul>
+              <li class="career_item stagger-item">
+                <p class="career_tit">HNINE<span>2022.01~2025.10</span></p>
+                <div class="career_content">
+                  <img src="https://picsum.photos/800/600" alt="이미지" />
+                </div>
+              </li>
+              <li class="career_item stagger-item">
+                <p class="career_tit">EDULAB<span>2021.04~2021.10</span></p>
+                <div class="career_content">
+                  <img src="https://picsum.photos/800/500" alt="이미지" />
+                </div>
+              </li>
+              <li class="career_item stagger-item">
+                <p class="career_tit">THE DAOM<span>2018.11~2020.05</span></p>
+                <div class="career_content">
+                  <img src="https://picsum.photos/800/200" alt="이미지" />
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
       <!-- Works -->
       <section id="works">
-        <div class="container">
-          <h2>works</h2>
-          <div class="container fade-up"></div>
+        <div class="container stagger">
+          <h2 class="section-title stagger-item">works</h2>
+          <div class="works_list">
+            <ul class="stagger-side">
+              <li class="left">
+                <img src="https://picsum.photos/800/1400" alt="이미지" />
+              </li>
+              <li class="right">
+                <img src="https://picsum.photos/800/2400" alt="이미지" />
+              </li>
+              <li class="left">
+                <img src="https://picsum.photos/800/1200" alt="이미지" />
+              </li>
+              <li class="right">
+                <img src="https://picsum.photos/800/4400" alt="이미지" />
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
       <!-- Skills -->
       <section id="skills">
         <div class="container">
-          <h2>Skills</h2>
-          <div class="container fade-up"></div>
+          <h2 class="section-title">Skills</h2>
+          <div class="fade-up"></div>
         </div>
       </section>
 

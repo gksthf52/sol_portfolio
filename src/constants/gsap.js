@@ -7,6 +7,7 @@ export const EASE = {
   in2: "power2.in",
   in3: "power3.in",
   in4: "power4.in",
+  inout2: "power2.inOut",
   expoin: "expo.in",
   expoout: "expo.out",
 };
@@ -20,4 +21,7 @@ export const DURATION = {
   heroText: 0.8,
   dotScale: 0.6,
   stagger: 0.02,
+
+  // card flip
+  flip: 0.4,
 };
