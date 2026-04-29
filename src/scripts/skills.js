@@ -1,55 +1,45 @@
-// core version + navigation, pagination modules:
 import Swiper from "swiper";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-// import Swiper and modules styles
-import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
-
 import { gsap } from "gsap";
 import "swiper/css";
 
-let swiper = null;
+export function initSkillsSwiper() {
+  const swiperEl = document.querySelector(".skills_swiper");
+  const wrapper = document.querySelector(".skills_swiper .swiper-wrapper");
 
-function createSwiper(startTranslate = null) {
-  if (swiper) {
-    swiper.destroy(true, true);
-  }
+  // 슬라이드 복제
+  const slides = wrapper.querySelectorAll(".swiper-slide");
+  slides.forEach((slide) => {
+    const clone = slide.cloneNode(true);
+    wrapper.appendChild(clone);
+  });
 
-  swiper = new Swiper(".skills_swiper", {
-    modules: [Autoplay],
+  const swiper = new Swiper(".skills_swiper", {
     slidesPerView: 13,
     spaceBetween: 30,
     loop: true,
-    speed: 2500,
-    autoplay: {
-      delay: 0,
-      disableOnInteraction: false,
-    },
-    on: {
-      init: (s) => {
-        if (startTranslate !== null) {
-          // 초기화 후 저장된 위치로 이동
-          s.setTranslate(startTranslate);
-        }
-      },
+    allowTouchMove: false,
+  });
+
+  const slideWidth = swiper.slides[0].offsetWidth + 30;
+  const totalWidth = slideWidth * slides.length; // 원본 슬라이드 총 너비
+
+  // GSAP 으로 무한 흐르게
+  const ticker = gsap.to(wrapper, {
+    x: `-=${totalWidth}`,
+    duration: 30,
+    ease: "none",
+    repeat: -1,
+    modifiers: {
+      x: gsap.utils.unitize((x) => parseFloat(x) % -totalWidth),
     },
   });
-}
 
-export function initSkillsSwiper() {
-  createSwiper();
-
-  const swiperEl = document.querySelector(".skills_swiper");
-
+  // 호버 시 멈춤
   swiperEl.addEventListener("mouseenter", () => {
-    swiper.autoplay.stop();
-    swiper.setTranslate(swiper.getTranslate());
-    swiper.setTransition(0);
+    ticker.pause(); // ← 즉시 멈춤
   });
 
   swiperEl.addEventListener("mouseleave", () => {
-    const currentTranslate = swiper.getTranslate(); // 현재 위치 저장
-    createSwiper(currentTranslate); // 위치 전달하며 재시작
+    ticker.resume(); // ← 즉시 재시작
   });
 }
