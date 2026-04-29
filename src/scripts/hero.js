@@ -82,11 +82,42 @@ const initCardFlip = () => {
   });
 };
 
+export function initHeader() {
+  const header = document.querySelector(".header");
+  let lastScrollY = 0;
+
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      // 아래로 스크롤 → 헤더 숨김
+      gsap.to(header, {
+        y: "-70",
+        duration: 0.2,
+        ease: "power2.inOut",
+      });
+    } else {
+      // 위로 스크롤 → 헤더 노출
+      gsap.to(header, {
+        y: 0,
+        duration: 0.2,
+        ease: "power2.inOut",
+      });
+    }
+
+    lastScrollY = currentScrollY;
+  });
+}
+
 // 메인 진입 애니메이션
 export function showHero() {
+  window.scrollTo(0, 0);
+
   heroTextAni();
   HeaderTextAni();
   BottomTextAni();
 
   initCardFlip();
+
+  // initHeader();
 }
