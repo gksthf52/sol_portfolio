@@ -50,13 +50,15 @@ export const staggerSideAni = () => {
 
   items.forEach((item, index) => {
     const isLeft = item.classList.contains("left");
-    const setY = window.innerHeight > 768 ? 100 : 30;
+    const setX = window.innerHeight > 768 ? 200 : 20;
+    const setY = window.innerHeight > 768 ? 200 : 50;
+    const rotateZ = window.innerHeight > 768 ? 10 : 15;
 
     gsap.set(item, {
-      x: isLeft ? -180 : 180,
+      x: isLeft ? -setX : setX,
       y: setY,
+      rotateZ: isLeft ? -rotateZ : rotateZ,
       opacity: 0,
-      rotateZ: isLeft ? -15 : 15,
     });
 
     gsap.to(item, {
@@ -69,7 +71,7 @@ export const staggerSideAni = () => {
       scrollTrigger: {
         trigger: item, // ⭐ 핵심 (각각 트리거)
         start: "top 80%",
-        // markers: true,
+        markers: true,
       },
     });
   });
