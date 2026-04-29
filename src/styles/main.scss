@@ -295,3 +295,16 @@ section {
     }
   }
 }
+
+// skills
+#skills {
+  .skills_swiper {
+    .swiper-wrapper {
+      transition-timing-function: linear !important; // ← 이거 꼭 있어야 해요
+    }
+  }
+}
+
+.footer {
+  height: 500px;
+}
