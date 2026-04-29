@@ -1,11 +1,11 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { EASE, DURATION } from "../constants/gsap.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const worksHoverAction = () => {
   const worksContent = document.querySelectorAll(".works_list li");
-  const dim = document.querySelectorAll(".works_list .dim");
 
   if (!worksContent.length) return; // 요소 없으면 종료
 
@@ -13,41 +13,41 @@ export const worksHoverAction = () => {
     const img = content.querySelector("img");
     const dim = content.querySelector(".dim");
 
+    // hover in
     content.addEventListener("mouseenter", () => {
-      gsap.set(dim, {
-        opacity: 1,
-        background: "transparent",
-      });
+      // li
       gsap.to(content, {
-        scale: 0.99,
-        duration: 0.3,
-        ease: "power2.out",
+        scale: 0.98,
+        // duration: DURATION.workHover,
+        ease: EASE.out2,
       });
+      // li > img
       gsap.to(img, {
-        filter: "blur(2px)",
+        filter: "blur(3px)",
       });
-
+      // li > dim
       gsap.to(dim, {
         opacity: 0.5,
-        duration: 0.3,
-        background: " #00000086",
+        backgroundColor: " #00000086",
       });
     });
 
+    // hover out
     content.addEventListener("mouseleave", () => {
+      // li
       gsap.to(content, {
         scale: 1,
-        duration: 0.3,
-        ease: "power2.out",
+        // duration: DURATION.workHover,
+        ease: EASE.out2,
       });
+      // li > img
       gsap.to(img, {
         filter: "blur(0px)",
       });
-
+      // li > dim
       gsap.to(dim, {
         opacity: 1,
-        duration: 0.3,
-        background: "transparent",
+        backgroundColor: "transparent",
       });
     });
   });

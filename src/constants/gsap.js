@@ -7,12 +7,16 @@ export const EASE = {
   in2: "power2.in",
   in3: "power3.in",
   in4: "power4.in",
+  inout1: "power1.inOut",
   inout2: "power2.inOut",
+  inout3: "power3.inOut",
+  inout4: "power4.inOut",
   expoin: "expo.in",
   expoout: "expo.out",
 };
 
 export const DURATION = {
+  // hero
   text: 0.4,
   delay: 0.2,
   delay2: 0.4,
@@ -22,6 +26,14 @@ export const DURATION = {
   dotScale: 0.6,
   stagger: 0.02,
 
-  // card flip
+  // util card flip
   flip: 0.4,
+
+  // career
+  careerText: 0.4,
+  careerTextStagger: 0.2,
+
+  // work
+  workImgAni: 1,
+  workHover: 0.3,
 };
