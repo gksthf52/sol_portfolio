@@ -2,7 +2,7 @@ import { playIntro } from "./intro.js";
 import { showHero } from "./hero.js";
 import { careerHoverAction, staggerAni, staggerSideAni } from "./career.js";
 import { worksHoverAction } from "./work.js";
-import { initSkillsSwiper } from "./skills.js";
+import { initSkillsSwiper, initLogoStretch } from "./skills.js";
 
 async function loadData() {
   const MIN_TIME = 300;
@@ -40,4 +40,7 @@ export async function init() {
 
   // skills
   initSkillsSwiper();
+
+  // footer
+  initLogoStretch();
 }

@@ -30,15 +30,11 @@ a.skip-nav {
     opacity: 1;
   }
 }
-.header,
-.bottom_text,
-.fade-item {
-  // opacity: 0;
-}
 section {
   display: flex;
   justify-content: center;
   width: 100vw;
+  overflow: hidden;
 
   .section-title {
     @include fontStyle("Red Hat Display", 16px, 300);
@@ -306,5 +302,62 @@ section {
 }
 
 .footer {
-  height: 500px;
+  // height: 1000px;
+  overflow: hidden;
+  @include fontStyle("Red Hat Display", 16px, 300);
+  text-align: center;
+
+  &_top {
+    border-top: 1px solid $color-dark;
+    padding-top: 50px;
+  }
+
+  &_nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    text-transform: uppercase;
+    padding: 10px 0;
+
+    &_title {
+      font-size: inherit;
+      font-weight: 300;
+    }
+
+    ul {
+      display: flex;
+      gap: 20px;
+    }
+  }
+
+  &_links {
+    padding: 10px 0 50px;
+    a {
+      text-transform: lowercase;
+    }
+  }
+
+  .logo-instance {
+    width: 100%;
+    height: 0px; // 초기 높이
+    @extend .bbh-hegarty;
+    text-transform: uppercase;
+    overflow: visible; // ← 텍스트 잘리면 추가
+  }
+
+  .footer_logo_stretch {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: $color-dark;
+
+    text {
+      @extend .bbh-hegarty;
+    }
+  }
+
+  &_bottom {
+    padding-bottom: 50px;
+  }
 }
