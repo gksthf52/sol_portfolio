@@ -23,9 +23,9 @@ async function loadData() {
 
 export async function init() {
   // intro
-  // const intro = playIntro();
-  // const data = loadData();
-  // await Promise.all([intro, data]);
+  const intro = playIntro();
+  const data = loadData();
+  await Promise.all([intro, data]);
 
   // hero
   showHero();

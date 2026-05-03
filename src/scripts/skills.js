@@ -113,7 +113,7 @@ export function initLogoStretch() {
       start: "bottom bottom", // ← 텍스트 영역 상단이 화면 하단에 닿을 때
       end: "bottom top", // ← 텍스트 영역 상단이 화면 30% 위치에 올 때
       scrub: true,
-      markers: true,
+      // markers: true,
     },
     height: window.innerWidth * 0.3,
   });
