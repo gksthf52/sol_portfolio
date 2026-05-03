@@ -4,7 +4,7 @@ import { EASE, DURATION } from "../constants/gsap.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const worksHoverAction = () => {
+const worksHoverAction = () => {
   const worksContent = document.querySelectorAll(".works_list li");
 
   if (!worksContent.length) return; // 요소 없으면 종료
@@ -51,4 +51,8 @@ export const worksHoverAction = () => {
       });
     });
   });
+};
+
+export const initWorkSection = () => {
+  worksHoverAction();
 };

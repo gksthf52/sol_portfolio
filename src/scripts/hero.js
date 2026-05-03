@@ -82,7 +82,7 @@ const initCardFlip = () => {
   });
 };
 
-export function initHeader() {
+const initHeader = () => {
   const header = document.querySelector(".header");
   let lastScrollY = 0;
 
@@ -107,17 +107,16 @@ export function initHeader() {
 
     lastScrollY = currentScrollY;
   });
-}
+};
 
 // 메인 진입 애니메이션
-export function showHero() {
+export const initHeroSection = () => {
   window.scrollTo(0, 0);
 
   heroTextAni();
   HeaderTextAni();
   BottomTextAni();
-
   initCardFlip();
 
   // initHeader();
-}
+};

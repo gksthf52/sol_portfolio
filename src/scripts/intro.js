@@ -5,7 +5,7 @@ import { EASE, DURATION } from "../constants/gsap.js";
 gsap.registerPlugin(ScrollTrigger);
 
 // dot 의 위치와 크기 정보를 반환
-function getDotInfo() {
+const getDotInfo = () => {
   const dot = document.querySelector(".dot");
   const rect = dot.getBoundingClientRect();
   const CenterX = rect.left + rect.width / 2;
@@ -13,18 +13,18 @@ function getDotInfo() {
   const Radius = rect.width / 2;
 
   return { CenterX, CenterY, Radius };
-}
+};
 
 // dot 위치 기준 transformOrigin 동적 계산
-function getDotTransformOrigin(info) {
+const getDotTransformOrigin = (info) => {
   const x = ((info.CenterX / window.innerWidth) * 100).toFixed(1);
   const y = ((info.CenterY / window.innerHeight) * 100).toFixed(1);
 
   return `${x}% ${y}%`;
-}
+};
 
 // dot scale 동적 계산 (화면 꽉 채우기)
-function getDotScale(info) {
+const getDotScale = (info) => {
   // 네 모서리까지 거리 전부 계산 → 가장 먼 거리 기준
   const distances = [
     Math.sqrt(info.CenterX ** 2 + info.CenterY ** 2),
@@ -38,10 +38,10 @@ function getDotScale(info) {
   const scale = Math.ceil((Math.max(...distances) / info.Radius) * 1.2);
 
   return scale;
-}
+};
 
 // 인트로 애니메이션
-export function playIntro() {
+export const playIntro = () => {
   return new Promise((resolve) => {
     const tl = gsap.timeline({
       onComplete: () => {
@@ -97,4 +97,4 @@ export function playIntro() {
       duration: DURATION.dotScale,
     });
   });
-}
+};

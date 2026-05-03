@@ -4,7 +4,7 @@ import { EASE, DURATION } from "../constants/gsap.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const careerHoverAction = () => {
+const careerHoverAction = () => {
   const careerList = document.querySelectorAll(".career_item");
 
   careerList.forEach((career) => {
@@ -19,7 +19,7 @@ export const careerHoverAction = () => {
   });
 };
 
-export const staggerAni = () => {
+const staggerAni = () => {
   const staggers = document.querySelectorAll(".stagger");
 
   if (staggers) {
@@ -46,7 +46,7 @@ export const staggerAni = () => {
   }
 };
 
-export const staggerSideAni = () => {
+const staggerSideAni = () => {
   const items = document.querySelectorAll(".stagger-side li");
 
   items.forEach((item, index) => {
@@ -76,4 +76,10 @@ export const staggerSideAni = () => {
       },
     });
   });
+};
+// 메인 진입 애니메이션
+export const initCareerSection = () => {
+  careerHoverAction();
+  staggerAni();
+  staggerSideAni();
 };

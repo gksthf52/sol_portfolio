@@ -49,9 +49,6 @@ section {
   padding: 0 30px;
 }
 
-.wrap {
-}
-
 // header
 .header {
   position: fixed;
@@ -178,6 +175,7 @@ section {
 
 // career
 #career {
+  overflow: visible;
   .career_list {
     ul {
       display: flex;
@@ -189,6 +187,7 @@ section {
         position: relative;
         width: 100%;
         text-align: center;
+        z-index: 11;
 
         &.is-active {
           .career_tit {
