@@ -4,85 +4,75 @@ import { EASE, DURATION } from "../constants/gsap.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// header
-const HeaderTextAni = () => {
-  const headerContent = document.querySelectorAll(".header");
+/**
+ * =========================
+ * GSAP Animation
+ * =========================
+ */
 
-  if (headerContent) {
-    gsap.set(headerContent, { y: -30, opacity: 0 });
-    gsap.to(headerContent, {
-      y: 0,
-      opacity: 1,
-      ease: EASE.in4,
-      duration: DURATION.text,
+// hero 메인 텍스트 순차적으로 올라오는 애니메이션
+const animateHeroText = () => {
+  ScrollTrigger.matchMedia({
+    "(min-width: 769px)": () => valueY(180),
+    "(max-width: 768px)": () => valueY(90),
+  });
+
+  function valueY(y) {
+    gsap.from("#hero .fade-item", {
+      y: y,
+      opacity: 0.2,
+      ease: EASE.expoout,
+      duration: DURATION.heroText,
+      stagger: DURATION.stagger,
+      delay: DURATION.delay3,
     });
   }
 };
 
-// hero bottom text
-const BottomTextAni = () => {
-  const headerContent = document.querySelectorAll(".bottom_text");
-
-  if (headerContent) {
-    gsap.set(headerContent, { y: 30, opacity: 0 });
-    gsap.to(headerContent, {
-      y: 0,
-      opacity: 1,
-      ease: EASE.in4,
-      duration: DURATION.text,
-    });
-  }
-};
-
-// hero
-const heroTextAni = () => {
-  const HeroFadeList = document.querySelectorAll("#hero .fade-list");
-
-  if (HeroFadeList) {
-    HeroFadeList.forEach((item, index) => {
-      const fadeItem = item.querySelectorAll(".fade-item");
-      const setY = window.innerWidth > 768 ? 180 : 90;
-
-      gsap.set(fadeItem, { y: setY, opacity: 0.2 });
-      gsap.to(fadeItem, {
-        y: 0,
-        opacity: 1,
-        ease: EASE.expoout,
-        duration: DURATION.heroText,
-        stagger: DURATION.stagger,
-        delay: DURATION.delay3,
-      });
-    });
-  }
-};
-
-// header util flip
-const initCardFlip = () => {
-  document.querySelectorAll(".card").forEach((card) => {
-    const inner = card.querySelector(".card_inner");
-    let isFlipped = false;
-
-    card.addEventListener("mouseenter", () => {
-      gsap.to(inner, {
-        rotateY: 180,
-        duration: DURATION.flip,
-        ease: EASE.inout2,
-      });
-      isFlipped = true;
-    });
-
-    card.addEventListener("mouseleave", () => {
-      gsap.to(inner, {
-        rotateY: 0,
-        duration: DURATION.flip,
-        ease: EASE.inout2,
-      });
-      isFlipped = false;
-    });
+// hero 상단 애니메이션 (header)
+const animateHeader = () => {
+  gsap.from(".header", {
+    y: -30,
+    opacity: 0,
+    ease: EASE.in4,
+    duration: DURATION.text,
   });
 };
 
-const initHeader = () => {
+// hero 하단 애니메이션 (text)
+const animateBottomText = () => {
+  gsap.from(".bottom_text", {
+    y: 30,
+    opacity: 0,
+    ease: EASE.in4,
+    duration: DURATION.text,
+  });
+};
+
+/**
+ * =========================
+ * Interaction
+ * =========================
+ */
+
+// 카드 플립
+const flipAnimation = (el, rotateY) => {
+  gsap.to(el, {
+    rotateY: rotateY,
+    duration: DURATION.flip,
+    ease: EASE.inout2,
+  });
+};
+const CardFlip = (cardSelector, innerSelector) => {
+  document.querySelectorAll(cardSelector).forEach((card) => {
+    const inner = card.querySelector(innerSelector);
+
+    card.addEventListener("mouseenter", () => flipAnimation(inner, 180));
+    card.addEventListener("mouseleave", () => flipAnimation(inner, 0));
+  });
+};
+
+const initHeaderScroll = () => {
   const header = document.querySelector(".header");
   let lastScrollY = 0;
 
@@ -111,12 +101,10 @@ const initHeader = () => {
 
 // 메인 진입 애니메이션
 export const initHeroSection = () => {
-  window.scrollTo(0, 0);
+  animateHeroText();
+  animateHeader();
+  animateBottomText();
 
-  heroTextAni();
-  HeaderTextAni();
-  BottomTextAni();
-  initCardFlip();
-
-  // initHeader();
+  CardFlip(".card", ".card_inner");
+  // initHeaderScroll();
 };
