@@ -20,16 +20,16 @@ const initLogoStretch = () => {
 
     if (window.innerWidth < 480) {
       padding = window.innerWidth * 0.18; // 모바일
-      console.log("모바일");
+      // console.log("모바일");
     } else if (window.innerWidth < 768) {
       padding = window.innerWidth * 0.1; // 태블릿
-      console.log("태블릿");
+      // console.log("태블릿");
     } else if (window.innerWidth < 1024) {
       padding = window.innerWidth * 0.08; // 데스크탑
-      console.log("데스크탑");
+      // console.log("데스크탑");
     } else {
       padding = window.innerWidth * 0.03; // 데스크탑
-      console.log("wide");
+      // console.log("wide");
     }
 
     svg.setAttribute(
@@ -42,16 +42,16 @@ const initLogoStretch = () => {
 
   if (window.innerWidth < 480) {
     scrollStart = "top 100%";
-    console.log("모바일");
+    // console.log("모바일");
   } else if (window.innerWidth < 768) {
     scrollStart = "top 100%";
-    console.log("태블릿");
+    // console.log("태블릿");
   } else if (window.innerWidth < 1024) {
     scrollStart = "bottom 80%";
-    console.log("데스크탑");
+    // console.log("데스크탑");
   } else {
     scrollStart = "bottom 80%";
-    console.log("wide");
+    // console.log("wide");
   }
 
   // 초기 viewBox 임시값 먼저 세팅
@@ -83,7 +83,7 @@ const initLogoStretch = () => {
       start: scrollStart, // ← 텍스트 영역 상단이 화면 하단에 닿을 때
       end: "bottom top", // ← 텍스트 영역 상단이 화면 30% 위치에 올 때
       scrub: true,
-      markers: true,
+      // markers: true,
     },
     height: window.innerWidth * 0.3,
   });

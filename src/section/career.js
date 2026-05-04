@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { EASE, DURATION } from "../constants/gsap.js";
+import { EASE, DURATION } from "../constants/animation.js";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -1,35 +1,47 @@
-@use "reset";
-@use "variables" as *;
-@use "font" as *;
+/* 
+********** intro ********** 
+*/
+#intro {
+  position: fixed;
+  inset: 0;
+  background-color: $color-dark;
+  z-index: 9999;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-@use "intro";
+  .text_box {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    @include fontStyle("BBH Hegarty", 40px);
+    padding-right: 20px;
 
-a.skip-nav {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 99999;
-  padding: 12px 20px;
-  background-color: $color-point;
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 600;
-  border-radius: 0 0 8px 0;
-  white-space: nowrap;
-  text-align: center;
+    &_area {
+      display: flex;
+      gap: 10px;
+      overflow: hidden;
+      span {
+        color: $color-light;
+      }
+    }
 
-  // 평소엔 화면 밖으로 숨김
-  transform: translateY(-100%);
-  opacity: 0;
-
-  // Tab 포커스 시 등장
-  &:focus {
-    transform: translateY(0);
-    transition: transform 0.2s ease;
-    opacity: 1;
+    .dot {
+      position: absolute;
+      right: 0;
+      bottom: 17px;
+      width: 10px;
+      height: 10px;
+      background-color: #e4e4e4;
+      border-radius: 50%;
+    }
   }
 }
+
+/*
+********** 공통 **********
+*/
 section {
   display: flex;
   justify-content: center;
@@ -40,6 +52,10 @@ section {
     @include fontStyle("Red Hat Display", 16px, 300);
     color: $color-point;
     margin-bottom: 100px;
+
+    span {
+      @include fontStyle("Noto Sans KR", 11px, 400);
+    }
   }
 }
 
@@ -49,95 +65,9 @@ section {
   padding: 0 30px;
 }
 
-// header
-.header {
-  position: fixed;
-  inset: 20px 30px;
-  display: flex;
-  align-items: center;
-  height: 50px;
-  @include fontStyle("Red Hat Display", 14px);
-  text-transform: uppercase;
-  z-index: 10;
-
-  .logo {
-    font-size: 30px;
-    color: $color-dark;
-  }
-
-  .nav {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-    // padding: 15px 30px;
-    // border-radius: 61px;
-    // background: #7c89877d;
-
-    .nav_list {
-      display: flex;
-      gap: 40px;
-
-      .nav_item {
-        a {
-          color: $color-dark;
-        }
-      }
-    }
-  }
-
-  .util {
-    position: absolute;
-    right: 0;
-
-    .card {
-      display: block;
-      width: 60px;
-      height: 45px;
-      perspective: 1000px;
-      cursor: pointer;
-
-      &_inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transform-style: preserve-3d;
-      }
-
-      &_front,
-      &_back {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        backface-visibility: hidden;
-        border-radius: 12px;
-      }
-
-      &_front {
-        background-color: $color-dark;
-        img {
-          height: 40px;
-        }
-      }
-
-      &_back {
-        background-color: $color-point;
-        transform: rotateY(180deg);
-        span {
-          text-align: center;
-          line-height: 1;
-          color: $color-light;
-          font-size: 14px;
-          font-weight: 400;
-          text-transform: capitalize;
-        }
-      }
-    }
-  }
-}
-
-// hero
+/*
+********** hero **********
+*/
 #hero {
   position: relative;
   height: 100vh;
@@ -173,7 +103,9 @@ section {
   }
 }
 
-// career
+/*
+********** career **********
+*/
 #career {
   overflow: visible;
   .career_list {
@@ -249,7 +181,9 @@ section {
   }
 }
 
-// works
+/*
+********** works **********
+*/
 #works {
   .works_list {
     ul {
@@ -291,72 +225,13 @@ section {
   }
 }
 
-// skills
+/*
+********** skills **********
+*/
 #skills {
   .skills_swiper {
     .swiper-wrapper {
       transition-timing-function: linear !important; // ← 이거 꼭 있어야 해요
     }
-  }
-}
-
-.footer {
-  // height: 1000px;
-  overflow: hidden;
-  @include fontStyle("Red Hat Display", 16px, 300);
-  text-align: center;
-
-  &_top {
-    border-top: 1px solid $color-dark;
-    padding-top: 50px;
-  }
-
-  &_nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    text-transform: uppercase;
-    padding: 10px 0;
-
-    &_title {
-      font-size: inherit;
-      font-weight: 300;
-    }
-
-    ul {
-      display: flex;
-      gap: 20px;
-    }
-  }
-
-  &_links {
-    padding: 10px 0 50px;
-    a {
-      text-transform: lowercase;
-    }
-  }
-
-  .logo-instance {
-    width: 100%;
-    height: 0px; // 초기 높이
-    @extend .bbh-hegarty;
-    text-transform: uppercase;
-    overflow: visible; // ← 텍스트 잘리면 추가
-  }
-
-  .footer_logo_stretch {
-    width: 100%;
-    height: 100%;
-    display: block;
-    color: $color-dark;
-
-    text {
-      @extend .bbh-hegarty;
-    }
-  }
-
-  &_bottom {
-    padding-bottom: 50px;
   }
 }
