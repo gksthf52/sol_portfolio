@@ -72,30 +72,48 @@ const CardFlip = (cardSelector, innerSelector) => {
   });
 };
 
+// 스크롤에 따른 header 노출/숨김
 const initHeaderScroll = () => {
   const header = document.querySelector(".header");
+  if (!header) return; // 헤더 체크
+
   let lastScrollY = 0;
+  let isHidden = false;
+  let ticking = false; //스크롤 이벤트 최적화
 
-  window.addEventListener("scroll", () => {
+  const handleScroll = () => {
     const currentScrollY = window.scrollY;
+    const scrollDiff = currentScrollY - lastScrollY;
 
-    if (currentScrollY > lastScrollY && currentScrollY > 50) {
-      // 아래로 스크롤 → 헤더 숨김
+    // 너무 작은 움직임은 무시
+    if (Math.abs(scrollDiff) < 5) return;
+
+    const shouldHide = scrollDiff > 0 && currentScrollY > 50;
+
+    // 상태가 바뀔 때만 실행
+    if (shouldHide !== isHidden) {
+      isHidden = shouldHide;
+
       gsap.to(header, {
-        y: "-70",
-        duration: 0.2,
-        ease: "power2.inOut",
-      });
-    } else {
-      // 위로 스크롤 → 헤더 노출
-      gsap.to(header, {
-        y: 0,
-        duration: 0.2,
-        ease: "power2.inOut",
+        y: isHidden ? "-100%" : "0%",
+        opacity: isHidden ? 0 : 1,
+        duration: 0.4,
+        ease: "power2.out",
+        overwrite: "auto",
       });
     }
 
     lastScrollY = currentScrollY;
+  };
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        handleScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
 };
 
@@ -106,5 +124,5 @@ export const initHeroSection = () => {
   animateBottomText();
 
   CardFlip(".card", ".card_inner");
-  // initHeaderScroll();
+  initHeaderScroll();
 };
