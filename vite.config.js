@@ -1,5 +1,8 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
+import { fileURLToPath } from "url"; // ← 추가
+
+const __dirname = fileURLToPath(new URL(".", import.meta.url)); // ← 추가
 
 export default defineConfig({
   build: {
@@ -7,7 +10,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         about: resolve(__dirname, "about/index.html"),
-        work: resolve(__dirname, "work/index.html"),
+        workHence: resolve(__dirname, "work/hence.html"),
       },
     },
     outDir: "dist",

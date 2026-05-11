@@ -40,32 +40,6 @@
 }
 
 /*
-********** 공통 **********
-*/
-section {
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  overflow: hidden;
-
-  .section-title {
-    @include fontStyle("Red Hat Display", 16px, 300);
-    color: $color-point;
-    margin-bottom: 100px;
-
-    span {
-      @include fontStyle("Noto Sans KR", 11px, 400);
-    }
-  }
-}
-
-.container {
-  width: 100%;
-  margin-top: 150px;
-  padding: 0 30px;
-}
-
-/*
 ********** hero **********
 */
 #hero {

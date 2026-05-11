@@ -78,7 +78,7 @@ a.skip-nav {
 
     .card {
       display: block;
-      width: 60px;
+      width: 54px;
       height: 45px;
       perspective: 1000px;
       cursor: pointer;
@@ -122,6 +122,32 @@ a.skip-nav {
       }
     }
   }
+}
+
+/*
+********** 공통 **********
+*/
+section {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  overflow: hidden;
+
+  .section-title {
+    @include fontStyle("Red Hat Display", 16px, 300);
+    color: $color-point;
+    margin-bottom: 100px;
+
+    span {
+      @include fontStyle("Noto Sans KR", 11px, 400);
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  margin-top: 150px;
+  padding: 0 30px;
 }
 
 /*
@@ -185,5 +211,46 @@ a.skip-nav {
 
   &_bottom {
     padding-bottom: 50px;
+  }
+}
+
+/* 
+********** 검은 배경일 경우 ********** 
+*/
+body.black {
+  .header {
+    .logo {
+      color: $color-light;
+    }
+
+    .nav {
+      .nav_list {
+        .nav_item {
+          a {
+            color: $color-light;
+          }
+        }
+      }
+    }
+
+    .util {
+      .card {
+        &_front {
+          background-color: $color-light;
+        }
+
+        &_back {
+          background-color: $color-point;
+          span {
+            color: $color-light;
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    &_top {
+      border-top: 1px solid $color-light;
+    }
   }
 }

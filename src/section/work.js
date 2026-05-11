@@ -1,8 +1,6 @@
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { EASE, DURATION } from "../constants/animation.js";
-
-gsap.registerPlugin(ScrollTrigger);
+import { staggerSideAni } from "../animations/contentStagger.js";
 
 const worksHoverAction = () => {
   const worksContent = document.querySelectorAll(".works_list li");
@@ -18,7 +16,6 @@ const worksHoverAction = () => {
       // li
       gsap.to(content, {
         scale: 0.98,
-        // duration: DURATION.workHover,
         ease: EASE.out2,
       });
       // li > img
@@ -37,7 +34,6 @@ const worksHoverAction = () => {
       // li
       gsap.to(content, {
         scale: 1,
-        // duration: DURATION.workHover,
         ease: EASE.out2,
       });
       // li > img
@@ -54,5 +50,6 @@ const worksHoverAction = () => {
 };
 
 export const initWorkSection = () => {
+  staggerSideAni();
   worksHoverAction();
 };

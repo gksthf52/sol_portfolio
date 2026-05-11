@@ -1,5 +1,4 @@
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger"; // ← 추가
 
 const initLogoStretch = () => {
   const logoWrap = document.querySelector(".logo-instance");

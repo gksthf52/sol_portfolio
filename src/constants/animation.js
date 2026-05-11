@@ -21,10 +21,15 @@ export const DURATION = {
   delay: 0.2,
   delay2: 0.4,
   delay3: 0.6,
+  delay4: 0.8,
   introText: 0.6,
   heroText: 0.8,
   dotScale: 0.6,
   stagger: 0.02,
+
+  // detail - work,
+  detailStagger: 0.08,
+  detailDuration: 1,
 
   // util card flip
   flip: 0.4,

@@ -1,0 +1,104 @@
+/*
+********** body.black **********
+*/
+
+/*
+********** 공통 **********
+*/
+.content {
+  text-align: center;
+  color: $color-light;
+}
+section {
+  .section_tit {
+    font-size: 50px;
+    color: $color-point;
+    // text-transform: uppercase;
+    // font-weight: 800;
+    @include fontStyle("Red Hat Display", 50px, 800);
+    @include fontStyle("Noto sans KR", 50px, 800);
+    @include fontStyle("BBH Hegarty", 50px);
+  }
+  .section_box {
+    &_img {
+      display: flex;
+      justify-content: center;
+      gap: 6vw;
+      width: 50vw;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    &_desc {
+      margin-top: 50px;
+    }
+  }
+  .section_desc {
+    margin-top: 20px;
+    @include fontStyle("Noto sans KR", 14px);
+    @include fontStyle("Red Hat Display", 14px);
+  }
+  .section_img {
+    margin-top: 20px;
+  }
+}
+
+.work_title {
+  .container {
+    padding-top: 60px;
+  }
+
+  .work_tags {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    .work_tag {
+      padding: 4px 16px;
+      border-radius: 20px;
+      background-color: rgb(124 137 135 / 25%);
+
+      span {
+        @include fontStyle("Noto sans KR", 12px);
+      }
+    }
+  }
+  .work_name {
+    .fade-list {
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      margin-top: 20px;
+
+      .fade-item {
+        @include fontStyle("BBH Hegarty", clamp(28px, 13vw, 190px));
+        line-height: 1;
+      }
+    }
+  }
+  .work_date {
+    margin-top: 100px;
+    p {
+      @include fontStyle("Noto sans KR", 14px);
+      @include fontStyle("Red Hat Display", 14px);
+    }
+  }
+}
+
+.work_preview {
+  .container {
+    margin-top: 60px;
+  }
+}
+
+.work_screenshot {
+  .container {
+    padding: 0;
+  }
+}
+
+.footer {
+  &_top {
+    border-top: none !important;
+  }
+}

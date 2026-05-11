@@ -1,9 +1,6 @@
-import Swiper from "swiper";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger"; // ← 추가
+import Swiper from "swiper";
 import "swiper/css";
-
-gsap.registerPlugin(ScrollTrigger); // ← 추가
 
 const initSkillsSwiper = () => {
   const swiperEl = document.querySelector(".skills_swiper");

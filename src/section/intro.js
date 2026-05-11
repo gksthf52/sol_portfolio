@@ -1,8 +1,5 @@
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { EASE, DURATION } from "../constants/animation.js";
-
-gsap.registerPlugin(ScrollTrigger);
 
 // dot 의 위치와 크기 정보를 반환
 const getDotInfo = () => {
