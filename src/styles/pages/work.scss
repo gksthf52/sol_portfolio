@@ -11,33 +11,46 @@
 }
 section {
   .section_tit {
-    font-size: 50px;
-    color: $color-point;
-    // text-transform: uppercase;
-    // font-weight: 800;
     @include fontStyle("Red Hat Display", 50px, 800);
-    @include fontStyle("Noto sans KR", 50px, 800);
-    @include fontStyle("BBH Hegarty", 50px);
+    // @include fontStyle("Noto sans KR", 50px, 800);
+    // @include fontStyle("BBH Hegarty", 50px);
+    color: $color-point;
+    // color: $color-light;
   }
+
   .section_box {
+    margin-top: 50px;
+
     &_img {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 6vw;
-      width: 50vw;
+      width: 45vw;
       max-width: 800px;
       margin: auto;
     }
 
     &_desc {
       margin-top: 50px;
+      @include fontStyle("Noto sans KR", 14px);
+    }
+    & + .section_box {
+      margin-top: 100px;
     }
   }
+
   .section_desc {
     margin-top: 20px;
     @include fontStyle("Noto sans KR", 14px);
-    @include fontStyle("Red Hat Display", 14px);
+
+    b {
+      display: block;
+      padding-bottom: 20px;
+      @include fontStyle("Noto sans KR", 18px, 700);
+    }
   }
+
   .section_img {
     margin-top: 20px;
   }
@@ -60,9 +73,11 @@ section {
 
       span {
         @include fontStyle("Noto sans KR", 12px);
+        text-transform: capitalize;
       }
     }
   }
+
   .work_name {
     .fade-list {
       display: flex;
@@ -80,7 +95,6 @@ section {
     margin-top: 100px;
     p {
       @include fontStyle("Noto sans KR", 14px);
-      @include fontStyle("Red Hat Display", 14px);
     }
   }
 }
@@ -100,5 +114,43 @@ section {
 .footer {
   &_top {
     border-top: none !important;
+  }
+}
+
+/*
+********** hence **********
+*/
+.hence {
+  .section_box_img {
+    &.hencefeed {
+      width: 45vw;
+    }
+    &.henceshop {
+      width: 60vw;
+    }
+  }
+}
+/*
+********** vortex **********
+*/
+.vortex {
+  .work_title {
+    .work_name {
+      .fade-list {
+        padding-bottom: 15px;
+        .fade-item {
+          @include fontStyle("BBH Hegarty", clamp(28px, 9vw, 130px));
+        }
+      }
+    }
+  }
+
+  .section_box_img {
+    &.vortexpreview {
+      width: 50vw;
+    }
+    &.vortexrole1 {
+      width: 50vw;
+    }
   }
 }

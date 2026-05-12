@@ -2,7 +2,7 @@ import "../styles/pages/work.scss";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
+import initLenis from "../lib/lenis.js";
 
 import { DURATION } from "../constants/animation.js";
 
@@ -10,17 +10,10 @@ import { initHeader } from "../components/header.js";
 import { animateFadeText } from "../animations/textStagger.js";
 import { staggerAni } from "../animations/contentStagger.js";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger);
 
 const initWork = async () => {
-  // ScrollSmoother 먼저
-  ScrollSmoother.create({
-    wrapper: "#smooth-wrapper",
-    content: "#smooth-content",
-    smooth: 5,
-    effects: true,
-  });
-
+  initLenis();
   // init
   initHeader();
   staggerAni();
