@@ -179,19 +179,18 @@
           object-fit: cover;
         }
         .dim {
-          // display: none;
           position: absolute;
           inset: 0;
-          // background: #00000086;
           z-index: 10;
-
-          // transition: all 0.2s;
         }
 
         &:hover {
           .dim {
-            // display: block;
-            // transition: all 0.2s;
+            // &_content {
+            //   width: 70%;
+            //   height: 50%;
+            //   background: #fff;
+            // }
           }
         }
       }

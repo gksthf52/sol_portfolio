@@ -152,5 +152,98 @@ section {
     &.vortexrole1 {
       width: 50vw;
     }
+    &.vortexrole2 {
+      width: 55vw;
+    }
+  }
+}
+
+/*
+********** dreamplus **********
+*/
+.dreamplus {
+  .work_title {
+    .work_name {
+      .fade-list {
+        padding-bottom: 15px;
+        .fade-item {
+          @include fontStyle("BBH Hegarty", clamp(28px, 12vw, 130px));
+        }
+      }
+    }
+  }
+
+  .dreamplusrole1 {
+    position: relative;
+    max-width: 800px;
+    width: 60vw;
+    height: 53vw;
+    margin: auto;
+    .section_box {
+      height: 34vw;
+    }
+
+    .stagger-item {
+      position: absolute;
+    }
+    .fade1 {
+      width: 100%;
+    }
+    .fade2 {
+      width: 20%;
+      left: 15.4%;
+      top: 48%;
+    }
+    .fade3 {
+      width: 40%;
+      right: 6%;
+      top: 26.5%;
+    }
+  }
+
+  .section_box_img {
+    &.dreampluspreview {
+      width: 60vw;
+    }
+    &.dreamplusrole2 {
+      width: 66vw;
+    }
+  }
+}
+
+/*
+********** lglife **********
+*/
+.lglife {
+  .section_box_img {
+    width: 50vw;
+  }
+}
+
+/*
+********** samsung **********
+*/
+.samsung {
+  .work_title {
+    .work_name {
+      .fade-list {
+        // padding-bottom: 15px;
+        .fade-item {
+          @include fontStyle("BBH Hegarty", clamp(28px, 9vw, 115px));
+        }
+      }
+    }
+  }
+
+  .section_box_img {
+    &.samsungpreview {
+      width: 65vw;
+    }
+    &.samsungrole1 {
+      width: 54vw;
+    }
+    &.samsungrole2 {
+      width: 55vw;
+    }
   }
 }
