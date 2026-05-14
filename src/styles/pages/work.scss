@@ -9,6 +9,7 @@
   text-align: center;
   color: $color-light;
 }
+
 section {
   .section_tit {
     @include fontStyle("Red Hat Display", 50px, 800);

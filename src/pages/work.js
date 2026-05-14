@@ -13,6 +13,8 @@ import { staggerAni } from "../animations/contentStagger.js";
 gsap.registerPlugin(ScrollTrigger);
 
 const initWork = async () => {
+  document.documentElement.style.visibility = "visible";
+
   initLenis();
   // init
   initHeader();

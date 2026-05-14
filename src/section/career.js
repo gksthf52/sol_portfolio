@@ -17,6 +17,6 @@ const careerHoverAction = () => {
 
 // 메인 진입 애니메이션
 export const initCareerSection = () => {
-  careerHoverAction();
   staggerAni();
+  careerHoverAction();
 };

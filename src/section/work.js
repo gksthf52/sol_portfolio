@@ -10,13 +10,14 @@ const worksHoverAction = () => {
   worksContent.forEach((content) => {
     const img = content.querySelector("img");
     const dim = content.querySelector(".dim");
+    const dimBox = content.querySelector(".dim_box");
 
     // hover in
     content.addEventListener("mouseenter", () => {
       // li
       gsap.to(content, {
         scale: 0.98,
-        ease: EASE.out2,
+        ease: EASE.out3,
       });
       // li > img
       gsap.to(img, {
@@ -27,6 +28,10 @@ const worksHoverAction = () => {
         opacity: 0.5,
         backgroundColor: " #00000086",
       });
+      // li > dimBox
+      gsap.to(dimBox, {
+        opacity: 1,
+      });
     });
 
     // hover out
@@ -34,7 +39,7 @@ const worksHoverAction = () => {
       // li
       gsap.to(content, {
         scale: 1,
-        ease: EASE.out2,
+        ease: EASE.out3,
       });
       // li > img
       gsap.to(img, {
@@ -44,6 +49,10 @@ const worksHoverAction = () => {
       gsap.to(dim, {
         opacity: 1,
         backgroundColor: "transparent",
+      });
+      // li > dimBox
+      gsap.to(dimBox, {
+        opacity: 0,
       });
     });
   });

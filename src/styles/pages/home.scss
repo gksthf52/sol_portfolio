@@ -39,6 +39,15 @@
   }
 }
 
+.page_transition {
+  width: 400vw;
+  height: 400vh;
+  background: $color-dark;
+  z-index: 100;
+  position: fixed;
+  top: -400%;
+}
+
 /*
 ********** hero **********
 */
@@ -111,7 +120,7 @@
         .career_tit {
           display: inline-block;
           position: relative;
-          @include fontStyle("BBH Hegarty", clamp(28px, 5vw, 96px));
+          @include fontStyle("BBH Hegarty", clamp(28px, 6vw, 96px));
           line-height: 1.1;
           letter-spacing: -0.5px;
           color: $color-point;
@@ -185,12 +194,20 @@
         }
 
         &:hover {
-          .dim {
-            // &_content {
-            //   width: 70%;
-            //   height: 50%;
-            //   background: #fff;
-            // }
+          .dim_box {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: 20px;
+            bottom: 20px;
+            z-index: 10;
+            span {
+              display: inline-block;
+              white-space: nowrap;
+              padding: 0 10px;
+              color: $color-light;
+            }
           }
         }
       }

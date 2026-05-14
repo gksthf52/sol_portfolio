@@ -35,7 +35,7 @@ export const staggerAni = ({
 export const staggerSideAni = () => {
   const items = document.querySelectorAll(".stagger-side li");
 
-  items.forEach((item, index) => {
+  items.forEach((item) => {
     const isLeft = item.classList.contains("left");
     const setX = window.innerWidth > 768 ? 150 : 20;
     const setY = window.innerWidth > 768 ? 100 : 50;
