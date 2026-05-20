@@ -1,4 +1,16 @@
 import { gsap } from "gsap";
+const resetPageTransition = () => {
+  const wrap = document.querySelector(".wrap");
+  const pageT = document.querySelector(".page_transition");
+
+  gsap.set(wrap, {
+    clearProps: "all",
+  });
+
+  gsap.set(pageT, {
+    clearProps: "all",
+  });
+};
 
 // 페이지 나갈 때
 export const pageLeave = () => {
@@ -33,6 +45,14 @@ export const pageLeave = () => {
 };
 
 export const initPageTransition = () => {
+  resetPageTransition();
+
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+      resetPageTransition();
+    }
+  });
+
   document.querySelectorAll("a[href]").forEach((link) => {
     const href = link.getAttribute("href");
 
