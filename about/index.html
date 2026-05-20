@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" style="visibility: hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,12 +20,12 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="black">
     <!-- 스킵 네비게이션 -->
     <a href="#hero" class="skip-nav">본문 바로가기</a>
 
     <!-- 본문 영역 -->
-    <div id="wrap" class="wrap">
+    <div id="wrap" class="wrap stagger">
       <header class="header">
         <h1 class="logo">
           <a href="/" aria-label="Hansol's Portfolio 홈">HS</a>
@@ -33,14 +33,14 @@
 
         <nav class="nav">
           <ul class="nav_list">
-            <li class="nav_item"><a href="#career">Career</a></li>
-            <li class="nav_item"><a href="#works">Works</a></li>
-            <li class="nav_item"><a href="#skills">Skills</a></li>
+            <li class="nav_item"><a href="/#career">Career</a></li>
+            <li class="nav_item"><a href="/#works">Works</a></li>
+            <li class="nav_item"><a href="/#skills">Skills</a></li>
           </ul>
         </nav>
 
         <div class="util">
-          <a href="#" class="about_me card">
+          <a href="/about/index.html" class="about_me card">
             <div class="card_inner">
               <div class="card_front">
                 <img src="/images/me.png" alt="내 프로필 이미지" />
@@ -54,58 +54,41 @@
       </header>
 
       <!-- about -->
-      <section id="about">
-        <div class="container"></div>
+      <section id="about" class="content">
+        <div class="container">
+          <h2 class="stagger-item">About Me</h2>
+          <div class="img stagger-item">
+            <img src="/images/me.png" alt="내 프로필 이미지" />
+          </div>
+          <p class="stagger-item">
+            6년차 퍼블리셔, 프론트엔드 개발자로 나아가는 중입니다. <br />
+            깔끔한 UI 구현과 효율적인 코드 구조를 위해 끈임없이 고민합니다.
+          </p>
+        </div>
       </section>
 
-      <footer class="footer" role="contentinfo">
-        <div class="container stagger">
+      <footer class="footer stagger-item" role="contentinfo">
+        <div class="container">
           <div class="footer_top">
-            <nav class="footer_nav stagger-item" aria-label="푸터 네비게이션">
-              <h3 class="footer_nav_title">MENU</h3>
+            <nav class="footer_nav" aria-label="푸터 네비게이션">
               <ul>
-                <li><a href="#career">career</a></li>
-                <li><a href="#works">works</a></li>
-                <li><a href="#skills">skills</a></li>
+                <li><a href="/#career">career</a></li>
+                <li><a href="/#works">works</a></li>
+                <li><a href="/#skills">skills</a></li>
               </ul>
             </nav>
             <ul class="footer_links">
-              <li class="stagger-item">
+              <li>
                 <a href="mailto:dev.solh52@gmail.com" aria-label="이메일 보내기"
                   >Email: dev.solh52@gmail.com</a
                 >
               </li>
-              <li class="stagger-item">
+              <li>
                 <a href="tel:+821083776972" aria-label="전화 걸기"
                   >Tel: 010-8377-6972</a
                 >
               </li>
             </ul>
-          </div>
-
-          <div class="footer_txt_ani" aria-hidden="true">
-            <div class="logo-instance">
-              <svg
-                class="footer_logo_stretch"
-                width="100%"
-                height="100%"
-                preserveAspectRatio="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <text
-                  x="50%"
-                  y="50%"
-                  text-anchor="middle"
-                  dominant-baseline="middle"
-                  font-size="100"
-                  font-weight="800"
-                  fill="currentColor"
-                  font-family="Pretendard"
-                >
-                  thank you
-                </text>
-              </svg>
-            </div>
           </div>
 
           <!-- 하단 정보 -->
@@ -119,6 +102,6 @@
       </footer>
     </div>
 
-    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="/src/pages/about.js"></script>
   </body>
 </html>

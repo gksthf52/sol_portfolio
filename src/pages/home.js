@@ -18,14 +18,17 @@ import { initPageTransition } from "../animations/initPageTransition.js";
 gsap.registerPlugin(ScrollTrigger);
 
 const initHome = async () => {
-  document.documentElement.style.visibility = "visible";
   //  인트로 + 데이터 로딩 병렬 실행
-  // const introPromise = playIntro();
-  // const dataPromise = loadData();
+  const introPromise = playIntro();
+  const dataPromise = loadData();
 
-  // await Promise.all([introPromise, dataPromise]);
+  await Promise.all([introPromise, dataPromise]);
+
+  // 깜빡이 현상 대비
+  document.querySelector(".wrap").style.visibility = "visible";
 
   initLenis();
+  initPageTransition();
 
   initHeader();
   initHeroSection();
@@ -33,7 +36,6 @@ const initHome = async () => {
   initWorkSection();
   initSkillsSection();
   initFooterSection();
-  initPageTransition();
 
   // ScrollTrigger 위치 재계산
   ScrollTrigger.refresh();

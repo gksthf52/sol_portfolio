@@ -1,5 +1,6 @@
 @use "./variables" as *;
 @use "./font" as *;
+@use "./mixin" as *;
 
 /* 
 ********** skip ********** 
@@ -9,7 +10,7 @@ a.skip-nav {
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 99999;
+  z-index: 9999;
   padding: 12px 20px;
   background-color: $color-point;
   color: #fff;
@@ -42,7 +43,7 @@ a.skip-nav {
   height: 50px;
   @include fontStyle("Red Hat Display", 14px);
   text-transform: uppercase;
-  z-index: 10;
+  z-index: 100;
 
   .logo {
     font-size: 30px;
@@ -123,6 +124,46 @@ a.skip-nav {
     }
   }
 }
+@include respond(tablet) {
+  .header {
+    inset: 12px 20px;
+  }
+}
+
+@include respond(mobile) {
+  .header {
+    @include fontStyle("Red Hat Display", 12px);
+
+    .logo {
+      font-size: 20px;
+    }
+
+    .nav {
+      .nav_list {
+        gap: 24px;
+      }
+    }
+
+    .util {
+      .card {
+        width: 46px;
+        height: 38px;
+
+        &_front {
+          img {
+            height: 30px;
+          }
+        }
+
+        &_back {
+          span {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
 
 /*
 ********** 공통 **********
@@ -150,11 +191,29 @@ section {
   padding: 0 30px;
 }
 
+@include respond(tablet) {
+  .container {
+    margin-top: 100px;
+    padding: 0 20px;
+  }
+}
+
+@include respond(mobile) {
+  section {
+    .section-title {
+      margin-bottom: 40px;
+    }
+  }
+  .container {
+    margin-top: 80px;
+    padding: 0 20px;
+  }
+}
+
 /*
 ********** footer **********
 */
 .footer {
-  // height: 1000px;
   overflow: hidden;
   @include fontStyle("Red Hat Display", 16px, 300);
   text-align: center;
@@ -211,6 +270,10 @@ section {
 
   &_bottom {
     padding-bottom: 50px;
+  }
+
+  @include respond(tablet) {
+    @include fontStyle("Red Hat Display", 14px, 300);
   }
 }
 

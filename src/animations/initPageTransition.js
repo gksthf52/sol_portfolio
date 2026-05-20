@@ -2,6 +2,9 @@ import { gsap } from "gsap";
 
 // 페이지 나갈 때
 export const pageLeave = () => {
+  // 페이지 이동 직전에 기록
+  sessionStorage.setItem("fromSubPage", "true");
+
   return new Promise((resolve) => {
     const wrap = document.querySelector(".wrap");
     const pageT = document.querySelector(".page_transition");

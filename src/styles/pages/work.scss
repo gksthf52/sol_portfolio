@@ -9,14 +9,20 @@
   text-align: center;
   color: $color-light;
 }
+.is-mobile {
+  display: none;
+}
+
+@include respond(mobile) {
+  .is-mobile {
+    display: block;
+  }
+}
 
 section {
   .section_tit {
     @include fontStyle("Red Hat Display", 50px, 800);
-    // @include fontStyle("Noto sans KR", 50px, 800);
-    // @include fontStyle("BBH Hegarty", 50px);
     color: $color-point;
-    // color: $color-light;
   }
 
   .section_box {
@@ -55,6 +61,34 @@ section {
   .section_img {
     margin-top: 20px;
   }
+
+  @include respond(mobile) {
+    .section_tit {
+      @include fontStyle("Red Hat Display", 40px, 800);
+    }
+
+    .section_box {
+      &_img {
+        width: 80vw;
+      }
+
+      &_desc {
+        margin-top: 40px;
+      }
+    }
+
+    .section_desc {
+      margin-top: 40px;
+      @include fontStyle("Noto sans KR", 14px);
+      padding: 0 16px;
+
+      b {
+        display: block;
+        padding-bottom: 30px;
+        @include fontStyle("Noto sans KR", 16px, 700);
+      }
+    }
+  }
 }
 
 .work_title {
@@ -92,10 +126,62 @@ section {
       }
     }
   }
+
+  .work_site {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 4px;
+    a {
+      @include fontStyle("Noto sans KR", 12px);
+    }
+    img {
+      width: 12px;
+    }
+  }
+
   .work_date {
     margin-top: 100px;
     p {
       @include fontStyle("Noto sans KR", 14px);
+    }
+  }
+
+  @include respond(mobile) {
+    .container {
+      padding-top: 40px;
+    }
+
+    .work_tags {
+      gap: 10px;
+
+      .work_tag {
+        padding: 2px 10px;
+      }
+    }
+
+    .work_name {
+      .fade-list {
+        margin-top: 40px;
+      }
+    }
+
+    .work_site {
+      margin-top: 10px;
+      a {
+        @include fontStyle("Noto sans KR", 14px);
+      }
+      img {
+        width: 12px;
+      }
+    }
+
+    .work_date {
+      margin-top: 40px;
+      p {
+        @include fontStyle("Noto sans KR", 14px);
+      }
     }
   }
 }
@@ -130,6 +216,17 @@ section {
       width: 60vw;
     }
   }
+
+  @include respond(mobile) {
+    .section_box_img {
+      &.hencefeed {
+        width: 80vw;
+      }
+      &.henceshop {
+        width: 80vw;
+      }
+    }
+  }
 }
 /*
 ********** vortex **********
@@ -155,6 +252,20 @@ section {
     }
     &.vortexrole2 {
       width: 55vw;
+    }
+  }
+
+  @include respond(mobile) {
+    .section_box_img {
+      &.vortexpreview {
+        width: 80vw;
+      }
+      &.vortexrole1 {
+        width: 80vw;
+      }
+      &.vortexrole2 {
+        width: 80vw;
+      }
     }
   }
 }

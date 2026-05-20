@@ -14,10 +14,28 @@ const initSkillsSwiper = () => {
   });
 
   const swiper = new Swiper(".skills_swiper", {
-    slidesPerView: 13,
-    spaceBetween: 30,
+    // slidesPerView: 13,
+    // spaceBetween: 30,
+    slidesPerView: 7,
+    spaceBetween: 24,
     loop: true,
     allowTouchMove: false,
+    breakpoints: {
+      480: {
+        slidesPerView: 7,
+        spaceBetween: 24,
+      },
+
+      768: {
+        slidesPerView: 10,
+        spaceBetween: 30,
+      },
+
+      1440: {
+        slidesPerView: 13,
+        spaceBetween: 30,
+      },
+    },
   });
 
   const slideWidth = swiper.slides[0].offsetWidth + 30;

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" style="visibility: hidden">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,7 +25,7 @@
     <a href="#hero" class="skip-nav">본문 바로가기</a>
 
     <!-- 인트로 애니메이션 영역 -->
-    <!-- <div id="intro">
+    <div id="intro">
       <div class="text_box">
         <div class="text_box_area">
           <span class="name">Hansol</span>
@@ -33,15 +33,18 @@
         </div>
         <span class="dot"></span>
       </div>
-    </div> -->
+    </div>
 
+    <!-- 페이지 전환 -->
     <div class="page_transition"></div>
 
     <!-- 본문 영역 -->
-    <div id="wrap" class="wrap">
+    <div id="wrap" class="wrap" style="visibility: hidden">
       <header class="header">
         <h1 class="logo">
-          <a href="/" aria-label="Hansol's Portfolio 홈">HS</a>
+          <a href="#" class="home-link" aria-label="Hansol's Portfolio 홈"
+            >HS</a
+          >
         </h1>
 
         <nav class="nav">
@@ -53,7 +56,7 @@
         </nav>
 
         <div class="util">
-          <a href="#" class="about_me card">
+          <a href="/about/index.html" class="about_me card">
             <div class="card_inner">
               <div class="card_front">
                 <img src="/images/me.png" alt="내 프로필 이미지" />
@@ -224,6 +227,20 @@
                   </div>
                 </a>
               </li> -->
+              <!-- <li class="right">
+                <a href="/works/goook.html">
+                  <img src="/public/images/main/work_goook.png" alt="이미지" />
+                  <div class="dim_content">
+                    <div class="dim"></div>
+                    <div class="dim_box">
+                      <span>#THEDAOM</span>
+                      <span>#구축</span>
+                      <span>#앱</span>
+                      <span>#웹</span>
+                    </div>
+                  </div>
+                </a>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -301,7 +318,7 @@
         <div class="container stagger">
           <div class="footer_top">
             <nav class="footer_nav stagger-item" aria-label="푸터 네비게이션">
-              <h3 class="footer_nav_title">MENU</h3>
+              <!-- <h3 class="footer_nav_title">MENU</h3> -->
               <ul>
                 <li><a href="#career">career</a></li>
                 <li><a href="#works">works</a></li>

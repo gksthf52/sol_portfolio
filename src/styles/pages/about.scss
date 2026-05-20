@@ -1,0 +1,48 @@
+/*
+********** body.black **********
+*/
+
+/*
+********** 공통 **********
+*/
+.content {
+  text-align: center;
+  color: $color-light;
+  margin-top: 40px;
+}
+
+/*
+********** about **********
+*/
+#about {
+  h2 {
+    @include fontStyle("BBH Hegarty", 6vw);
+    text-transform: uppercase;
+  }
+  .img {
+    width: 200px;
+    margin: 20px auto 50px;
+  }
+  p {
+    @include fontStyle("Noto sans KR", 16px, 300);
+  }
+
+  @include respond(tablet) {
+    h2 {
+      @include fontStyle("BBH Hegarty", 8vw);
+    }
+    .img {
+      width: 30vw;
+      margin: 50px auto;
+    }
+    p {
+      @include fontStyle("Noto sans KR", 16px, 300);
+    }
+  }
+
+  @include respond(mobile) {
+    p {
+      @include fontStyle("Noto sans KR", 14px, 300);
+    }
+  }
+}

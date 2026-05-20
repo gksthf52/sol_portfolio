@@ -39,12 +39,22 @@ const getDotScale = (info) => {
 
 // 인트로 애니메이션
 export const playIntro = () => {
+  const fromSubPage = sessionStorage.getItem("fromSubPage");
+
+  // 서브페이지에서 온 경우 인트로 스킵
+  if (fromSubPage) {
+    sessionStorage.removeItem("fromSubPage"); // ← 바로 제거
+    document.getElementById("intro")?.remove();
+
+    return Promise.resolve();
+  }
+
+  // 애니메이션
   return new Promise((resolve) => {
     const tl = gsap.timeline({
       onComplete: () => {
         // 인트로 제거
-        const intro = document.getElementById("intro");
-        intro?.remove();
+        document.getElementById("intro")?.remove();
 
         resolve();
       },
