@@ -10,7 +10,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         about: resolve(__dirname, "about/index.html"),
-        workHence: resolve(__dirname, "work/hence.html"),
+        workHence: resolve(__dirname, "works/hence.html"),
       },
     },
     outDir: "dist",
