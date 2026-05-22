@@ -22,9 +22,9 @@ export const pageLeave = () => {
 
     gsap.to(pageT, {
       x: "-5%",
-      y: "100%",
+      y: "50%",
       rotate: 30,
-      duration: 1.6,
+      duration: 1.8,
       delay: 0.2,
       ease: "power2.in",
       onComplete: () => resolve(),
