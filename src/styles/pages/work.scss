@@ -353,6 +353,21 @@ section {
   .section_box_img {
     width: 50vw;
   }
+
+  @include respond(mobile) {
+    .work_title {
+      .work_name {
+        .fade-list {
+          .fade-item {
+            @include fontStyle("BBH Hegarty", clamp(28px, 18vw, 115px));
+          }
+        }
+      }
+    }
+    .section_box_img {
+      width: 80vw;
+    }
+  }
 }
 
 /*
@@ -381,6 +396,20 @@ section {
       width: 55vw;
     }
   }
+
+  @include respond(mobile) {
+    .section_box_img {
+      &.samsungpreview {
+        width: 80vw;
+      }
+      &.samsungrole1 {
+        width: 80vw;
+      }
+      &.samsungrole2 {
+        width: 80vw;
+      }
+    }
+  }
 }
 
 /*
@@ -402,6 +431,35 @@ section {
     }
     &.goookrole4 {
       width: 55vw;
+    }
+  }
+
+  @include respond(mobile) {
+    .work_title {
+      .work_name {
+        .fade-list {
+          .fade-item {
+            @include fontStyle("BBH Hegarty", clamp(28px, 20vw, 115px));
+          }
+        }
+      }
+    }
+    .section_box_img {
+      &.goookpreview {
+        width: 80vw;
+      }
+      &.goookrole1 {
+        width: 80vw;
+      }
+      &.goookrole2 {
+        width: 80vw;
+      }
+      &.goookrole3 {
+        width: 60vw;
+      }
+      &.goookrole4 {
+        width: 80vw;
+      }
     }
   }
 }
