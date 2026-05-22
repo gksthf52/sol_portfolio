@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 
-const resetPageTransition = () => {
+export const resetPageTransition = () => {
   const wrap = document.querySelector(".wrap");
   const pageT = document.querySelector(".page_transition");
 
