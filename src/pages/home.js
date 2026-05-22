@@ -45,36 +45,25 @@ const initHome = async () => {
 };
 
 window.addEventListener("pageshow", () => {
-  const pageT = document.querySelector(".page_transition");
-  const wrap = document.querySelector(".wrap");
-
-  if (pageT) {
-    pageT.removeAttribute("style");
-  }
-
-  if (wrap) {
-    wrap.removeAttribute("style");
-  }
-
-  gsap.set(pageT, {
-    clearProps: "all",
-  });
-
-  gsap.set(wrap, {
-    clearProps: "all",
-  });
+  // if (event.persisted) {
+  //   window.location.reload();
+  // }
 
   if (event.persisted) {
+    document.body.style.opacity = "0";
+
     window.location.reload();
   }
+
+  // window.location.replace(window.location.href);
 });
 
-window.addEventListener("beforeunload", () => {
-  const pageT = document.querySelector(".page_transition");
-  const wrap = document.querySelector(".wrap");
+// window.addEventListener("beforeunload", () => {
+//   const pageT = document.querySelector(".page_transition");
+//   const wrap = document.querySelector(".wrap");
 
-  pageT?.removeAttribute("style");
-  wrap?.removeAttribute("style");
-});
+//   pageT?.removeAttribute("style");
+//   wrap?.removeAttribute("style");
+// });
 
 initHome();
