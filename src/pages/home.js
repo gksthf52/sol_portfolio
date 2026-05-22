@@ -63,6 +63,10 @@ window.addEventListener("pageshow", () => {
   gsap.set(wrap, {
     clearProps: "all",
   });
+
+  if (event.persisted) {
+    window.location.reload();
+  }
 });
 
 window.addEventListener("beforeunload", () => {
