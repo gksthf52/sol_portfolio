@@ -1,4 +1,5 @@
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const initLogoStretch = () => {
   const logoWrap = document.querySelector(".logo-instance");
@@ -7,29 +8,26 @@ const initLogoStretch = () => {
 
   if (!logoWrap || !svg || !textEl) return;
 
+  const getPadding = () => {
+    const w = window.innerWidth;
+    if (w < 480) return w * 0.18;
+    if (w < 768) return w * 0.1;
+    if (w < 1024) return w * 0.08;
+    return w * 0.03;
+  };
+
+  const getInitialViewBox = () => {
+    const w = window.innerWidth;
+    if (w < 480) return "0 0 400 100";
+    if (w < 768) return "0 0 600 100";
+    return "0 0 800 100";
+  };
+
   const updateViewBox = () => {
     const bbox = textEl.getBBox();
     if (!bbox.width || !bbox.height) return;
 
-    // const padding = 50; // 좌우 여백
-    // 화면 너비에 따라 padding 동적 계산
-    // const padding = window.innerWidth * 0.07; // 화면 너비의 3%
-
-    let padding;
-
-    if (window.innerWidth < 480) {
-      padding = window.innerWidth * 0.18; // 모바일
-      // console.log("모바일");
-    } else if (window.innerWidth < 768) {
-      padding = window.innerWidth * 0.1; // 태블릿
-      // console.log("태블릿");
-    } else if (window.innerWidth < 1024) {
-      padding = window.innerWidth * 0.08; // 데스크탑
-      // console.log("데스크탑");
-    } else {
-      padding = window.innerWidth * 0.03; // 데스크탑
-      // console.log("wide");
-    }
+    const padding = getPadding();
 
     svg.setAttribute(
       "viewBox",
@@ -37,54 +35,29 @@ const initLogoStretch = () => {
     );
   };
 
-  let scrollStart;
+  svg.setAttribute("viewBox", getInitialViewBox());
 
-  if (window.innerWidth < 480) {
-    scrollStart = "top 100%";
-    // console.log("모바일");
-  } else if (window.innerWidth < 768) {
-    scrollStart = "top 100%";
-    // console.log("태블릿");
-  } else if (window.innerWidth < 1024) {
-    scrollStart = "bottom 80%";
-    // console.log("데스크탑");
-  } else {
-    scrollStart = "bottom 80%";
-    // console.log("wide");
-  }
-
-  // 초기 viewBox 임시값 먼저 세팅
-  svg.setAttribute("viewBox", "0 0 800 100");
-  // 초기 viewBox 임시값 반응형으로
-  // function getInitialViewBox() {
-  //   if (window.innerWidth < 480) {
-  //     return "0 0 400 100"; // 모바일
-  //   } else if (window.innerWidth < 768) {
-  //     return "0 0 600 100"; // 태블릿
-  //   } else {
-  //     return "0 0 800 100"; // 데스크탑
-  //   }
-  // }
-
-  // svg.setAttribute("viewBox", getInitialViewBox());
-
-  // 폰트 로딩 후 정확한 값으로 업데이트
   document.fonts.ready.then(() => {
     updateViewBox();
   });
 
-  window.addEventListener("resize", updateViewBox);
+  window.addEventListener("resize", () => {
+    updateViewBox();
+    ScrollTrigger.refresh();
+  });
+
   gsap.set(logoWrap, { height: "0px" });
 
   gsap.to(logoWrap, {
     scrollTrigger: {
-      trigger: ".footer_top", // ← 텍스트 영역 기준
-      start: scrollStart, // ← 텍스트 영역 상단이 화면 하단에 닿을 때
-      end: "bottom top", // ← 텍스트 영역 상단이 화면 30% 위치에 올 때
+      trigger: ".footer_top",
+      start: "top 80%",
+      end: "bottom top",
       scrub: true,
-      // markers: true,
+      markers: true,
     },
-    height: window.innerWidth * 0.3,
+    height: () => window.innerWidth * 0.4,
+    ease: "none",
   });
 };
 

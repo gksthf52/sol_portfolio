@@ -39,7 +39,7 @@ section {
     }
 
     &_desc {
-      margin-top: 50px;
+      margin-top: 30px;
       @include fontStyle("Noto sans KR", 14px);
     }
     & + .section_box {
@@ -68,19 +68,23 @@ section {
     }
 
     .section_box {
+      margin-top: 30px;
       &_img {
         width: 80vw;
       }
 
       &_desc {
-        margin-top: 40px;
+        margin-top: 20px;
+      }
+      & + .section_box {
+        margin-top: 50px;
       }
     }
 
     .section_desc {
-      margin-top: 40px;
+      margin-top: 20px;
       @include fontStyle("Noto sans KR", 14px);
-      padding: 0 16px;
+      padding: 0 10px;
 
       b {
         display: block;
@@ -228,6 +232,7 @@ section {
     }
   }
 }
+
 /*
 ********** vortex **********
 */
@@ -321,6 +326,24 @@ section {
       width: 66vw;
     }
   }
+  @include respond(mobile) {
+    .dreamplusrole1 {
+      width: 80vw;
+      height: 70vw;
+      .section_box {
+        height: 45vw;
+      }
+    }
+
+    .section_box_img {
+      &.dreampluspreview {
+        width: 80vw;
+      }
+      &.dreamplusrole2 {
+        width: 84vw;
+      }
+    }
+  }
 }
 
 /*
@@ -355,6 +378,29 @@ section {
       width: 54vw;
     }
     &.samsungrole2 {
+      width: 55vw;
+    }
+  }
+}
+
+/*
+********** goook **********
+*/
+.goook {
+  .section_box_img {
+    &.goookpreview {
+      width: 65vw;
+    }
+    &.goookrole1 {
+      width: 35vw;
+    }
+    &.goookrole2 {
+      width: 55vw;
+    }
+    &.goookrole3 {
+      width: 25vw;
+    }
+    &.goookrole4 {
       width: 55vw;
     }
   }

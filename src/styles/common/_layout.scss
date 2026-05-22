@@ -251,17 +251,19 @@ section {
 
   .logo-instance {
     width: 100%;
-    height: 0px; // 초기 높이
+    height: 0px;
     @extend .bbh-hegarty;
     text-transform: uppercase;
-    overflow: visible; // ← 텍스트 잘리면 추가
+    overflow: visible;
   }
 
   .footer_logo_stretch {
     width: 100%;
     height: 100%;
     display: block;
-    color: $color-dark;
+    color: $color-light;
+    // justify-content 제거 (SVG 에 적용 안 됨)
+    // color 중복 제거
 
     text {
       @extend .bbh-hegarty;
