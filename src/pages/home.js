@@ -45,7 +45,32 @@ const initHome = async () => {
 };
 
 window.addEventListener("pageshow", () => {
-  resetPageTransition();
+  const pageT = document.querySelector(".page_transition");
+  const wrap = document.querySelector(".wrap");
+
+  if (pageT) {
+    pageT.removeAttribute("style");
+  }
+
+  if (wrap) {
+    wrap.removeAttribute("style");
+  }
+
+  gsap.set(pageT, {
+    clearProps: "all",
+  });
+
+  gsap.set(wrap, {
+    clearProps: "all",
+  });
+});
+
+window.addEventListener("beforeunload", () => {
+  const pageT = document.querySelector(".page_transition");
+  const wrap = document.querySelector(".wrap");
+
+  pageT?.removeAttribute("style");
+  wrap?.removeAttribute("style");
 });
 
 initHome();
