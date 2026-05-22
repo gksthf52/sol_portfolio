@@ -1,15 +1,23 @@
 import { gsap } from "gsap";
+
 const resetPageTransition = () => {
   const wrap = document.querySelector(".wrap");
   const pageT = document.querySelector(".page_transition");
 
-  gsap.set(wrap, {
+  // GSAP inline style 제거
+  gsap.set([wrap, pageT], {
     clearProps: "all",
   });
 
-  gsap.set(pageT, {
-    clearProps: "all",
-  });
+  // 안전하게 transform 강제 초기화
+  if (pageT) {
+    pageT.style.transform = "";
+  }
+
+  if (wrap) {
+    wrap.style.transform = "";
+    wrap.style.opacity = "";
+  }
 };
 
 // 페이지 나갈 때
@@ -45,8 +53,10 @@ export const pageLeave = () => {
 };
 
 export const initPageTransition = () => {
+  // 최초 진입
   resetPageTransition();
 
+  // 뒤로가기 복원 대응
   window.addEventListener("pageshow", (event) => {
     if (event.persisted) {
       resetPageTransition();

@@ -13,7 +13,10 @@ import { initWorkSection } from "../section/work.js";
 import { initSkillsSection } from "../section/skills.js";
 import { initFooterSection } from "../components/footer.js";
 
-import { initPageTransition } from "../animations/initPageTransition.js";
+import {
+  initPageTransition,
+  resetPageTransition,
+} from "../animations/initPageTransition.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,5 +43,9 @@ const initHome = async () => {
   // ScrollTrigger 위치 재계산
   ScrollTrigger.refresh();
 };
+
+window.addEventListener("pageshow", () => {
+  resetPageTransition();
+});
 
 initHome();
