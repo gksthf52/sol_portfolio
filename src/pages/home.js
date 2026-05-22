@@ -13,10 +13,7 @@ import { initWorkSection } from "../section/work.js";
 import { initSkillsSection } from "../section/skills.js";
 import { initFooterSection } from "../components/footer.js";
 
-import {
-  initPageTransition,
-  resetPageTransition,
-} from "../animations/initPageTransition.js";
+import { initPageTransition } from "../animations/initPageTransition.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,25 +42,11 @@ const initHome = async () => {
 };
 
 window.addEventListener("pageshow", () => {
-  // if (event.persisted) {
-  //   window.location.reload();
-  // }
-
   if (event.persisted) {
     document.body.style.opacity = "0";
 
     window.location.reload();
   }
-
-  // window.location.replace(window.location.href);
 });
-
-// window.addEventListener("beforeunload", () => {
-//   const pageT = document.querySelector(".page_transition");
-//   const wrap = document.querySelector(".wrap");
-
-//   pageT?.removeAttribute("style");
-//   wrap?.removeAttribute("style");
-// });
 
 initHome();
