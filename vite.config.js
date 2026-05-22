@@ -15,6 +15,7 @@ export default defineConfig({
         workLglife: resolve(__dirname, "works/lglife.html"),
         workDreamplus: resolve(__dirname, "works/dreamplus.html"),
         workSamsung: resolve(__dirname, "works/samsung.html"),
+        workGoook: resolve(__dirname, "works/goook.html"),
       },
     },
     outDir: "dist",
