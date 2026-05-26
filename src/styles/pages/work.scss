@@ -51,7 +51,7 @@ section {
     margin-top: 20px;
     @include fontStyle("Noto sans KR", 14px);
 
-    b {
+    strong {
       display: block;
       padding-bottom: 20px;
       @include fontStyle("Noto sans KR", 18px, 700);
@@ -86,7 +86,7 @@ section {
       @include fontStyle("Noto sans KR", 14px);
       padding: 0 10px;
 
-      b {
+      strong {
         display: block;
         padding-bottom: 30px;
         @include fontStyle("Noto sans KR", 16px, 700);

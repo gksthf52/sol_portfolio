@@ -31,7 +31,7 @@
           <a href="/" aria-label="Hansol's Portfolio 홈">HS</a>
         </h1>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="메인 메뉴">
           <ul class="nav_list">
             <li class="nav_item"><a href="/#career">Career</a></li>
             <li class="nav_item"><a href="/#works">Works</a></li>
@@ -43,9 +43,9 @@
           <a href="/about/index.html" class="about_me card">
             <div class="card_inner">
               <div class="card_front">
-                <img src="/images/me.png" alt="내 프로필 이미지" />
+                <img src="/images/me.png" alt="한솔 프로필 사진" />
               </div>
-              <div class="card_back">
+              <div class="card_back" aria-hidden="true">
                 <span>about</span>
               </div>
             </div>
@@ -62,7 +62,8 @@
               <div class="work_tag"><span>scss</span></div>
               <div class="work_tag"><span>prototype</span></div>
             </div>
-            <div class="work_name">
+            <div class="work_name" aria-hidden="true">
+              <span class="sr-only">samsun.com</span>
               <div class="fade-list">
                 <div class="fade-item">S</div>
                 <div class="fade-item">A</div>
@@ -87,7 +88,10 @@
           <div class="section_box container">
             <div class="section_box_img samsungpreview">
               <div class="stagger-item">
-                <img src="/images/samsung/overview_img.png" alt="" />
+                <img
+                  src="/images/samsung/overview_img.png"
+                  alt="samsung 웹사이트 화면 미리보기"
+                />
               </div>
             </div>
             <div class="section_box_desc">
@@ -129,7 +133,10 @@
             <div class="section_box stagger2">
               <div class="section_box_img samsungrole1">
                 <div class="stagger-item">
-                  <img src="/images/samsung/role_1.png" alt="" />
+                  <img
+                    src="/images/samsung/role_1.png"
+                    alt="samsung 리빙가전 페이지"
+                  />
                 </div>
               </div>
               <div class="section_box_desc stagger-item">
@@ -139,10 +146,16 @@
             <div class="section_box stagger2">
               <div class="section_box_img samsungrole2">
                 <div class="stagger-item">
-                  <img src="/images/samsung/role_2.png " alt="" />
+                  <img
+                    src="/images/samsung/role_2.png "
+                    alt="samsung 기획전 페이지"
+                  />
                 </div>
                 <div class="stagger-item">
-                  <img src="/images/samsung/role_3.png " alt="" />
+                  <img
+                    src="/images/samsung/role_3.png "
+                    alt="samsung 기획전 페이지"
+                  />/>
                 </div>
               </div>
               <div class="section_box_desc stagger-item">
@@ -152,11 +165,16 @@
           </div>
         </section>
 
-        <section class="work_screenshot stagger2">
+        <section
+          class="work_screenshot stagger2"
+          aria-labelledby="screenshot-title"
+        >
           <div class="container">
-            <h2 class="section_tit stagger-item">* Learned</h2>
+            <h2 id="screenshot-title" class="section_tit stagger-item">
+              <span aria-hidden="true">* </span>Learned
+            </h2>
             <p class="section_desc stagger-item">
-              <b>“신속한 화면 구현 능력과 빠른 피드백 반영 경험"</b>
+              <strong>“신속한 화면 구현 능력과 빠른 피드백 반영 경험"</strong>
 
               디자인 시안을 기반으로 빠르게 퍼블리싱 <br />
               당일 수정 요청에 즉각 반영하는 빠른 커뮤니케이션 및 대응 <br />
@@ -170,7 +188,10 @@
         <section class="work_screenshot stagger2">
           <div class="container">
             <div class="section_img stagger-item">
-              <img src="/images/samsung/screenshot.png" alt="" />
+              <img
+                src="/images/samsung/screenshot.png"
+                alt="samsung screenshot"
+              />/>
             </div>
           </div>
         </section>

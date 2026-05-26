@@ -31,7 +31,7 @@
           <a href="/" aria-label="Hansol's Portfolio 홈">HS</a>
         </h1>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="메인 메뉴">
           <ul class="nav_list">
             <li class="nav_item"><a href="/#career">Career</a></li>
             <li class="nav_item"><a href="/#works">Works</a></li>
@@ -43,9 +43,9 @@
           <a href="/about/index.html" class="about_me card">
             <div class="card_inner">
               <div class="card_front">
-                <img src="/images/me.png" alt="내 프로필 이미지" />
+                <img src="/images/me.png" alt="한솔 프로필 사진" />
               </div>
-              <div class="card_back">
+              <div class="card_back" aria-hidden="true">
                 <span>about</span>
               </div>
             </div>
@@ -62,7 +62,8 @@
               <div class="work_tag"><span>frontend</span></div>
               <div class="work_tag"><span>mobile</span></div>
             </div>
-            <div class="work_name">
+              <div class="work_name" aria-hidden="true">
+                <span class="sr-only">hence</span>
               <div class="fade-list">
                 <div class="fade-item">H</div>
                 <div class="fade-item">E</div>
@@ -160,11 +161,14 @@
           </div>
         </section>
 
-        <section class="work_screenshot stagger2">
+        <section class="work_screenshot stagger2
+          aria-labelledby="screenshot-title"">
           <div class="container">
-            <h2 class="section_tit stagger-item">* Learned</h2>
+            <h2 id="screenshot-title" class="section_tit stagger-item">
+              <span aria-hidden="true">* </span>Learned
+            </h2>
             <p class="section_desc stagger-item">
-              <b>“본격적으로 typeScript를 적용해 본 프로젝트”</b>
+              <strong>“본격적으로 typeScript를 적용해 본 프로젝트”</strong>
 
               컴포넌트 단위 UI 제작 <br />
               interface, type 활용으로 타입 안정성 확보 및 TypeScript 환경에

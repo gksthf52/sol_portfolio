@@ -22,16 +22,16 @@
   </head>
   <body class="black">
     <!-- 스킵 네비게이션 -->
-    <a href="#hero" class="skip-nav">본문 바로가기</a>
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
     <!-- 본문 영역 -->
     <div id="wrap" class="wrap dreamplus">
       <header class="header">
         <h1 class="logo">
-          <a href="/" aria-label="Hansol's Portfolio 홈">HS</a>
+          <a href="/" aria-label="한솔 포트폴리오 홈으로 이동">HS</a>
         </h1>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="메인 메뉴">
           <ul class="nav_list">
             <li class="nav_item"><a href="/#career">Career</a></li>
             <li class="nav_item"><a href="/#works">Works</a></li>
@@ -40,12 +40,16 @@
         </nav>
 
         <div class="util">
-          <a href="/about/index.html" class="about_me card">
+          <a
+            href="/about/index.html"
+            class="about_me card"
+            aria-label="About me 페이지로 이동"
+          >
             <div class="card_inner">
               <div class="card_front">
-                <img src="/images/me.png" alt="내 프로필 이미지" />
+                <img src="/images/me.png" alt="한솔 프로필 사진" />
               </div>
-              <div class="card_back">
+              <div class="card_back" aria-hidden="true">
                 <span>about</span>
               </div>
             </div>
@@ -53,143 +57,175 @@
         </div>
       </header>
 
-      <div class="content">
-        <!-- 프로젝트명, 프로젝트 기간 -->
-        <section class="work_title">
-          <div class="container stagger">
-            <div class="work_tags stagger-item">
-              <div class="work_tag"><span>Next.js</span></div>
-              <div class="work_tag"><span>Responsive Web</span></div>
-              <div class="work_tag"><span>i18next</span></div>
-            </div>
-            <div class="work_name">
-              <div class="fade-list">
-                <div class="fade-item">D</div>
-                <div class="fade-item">R</div>
-                <div class="fade-item">E</div>
-                <div class="fade-item">A</div>
-                <div class="fade-item">M</div>
-                <div class="fade-item">P</div>
-                <div class="fade-item">L</div>
-                <div class="fade-item">U</div>
-                <div class="fade-item">S</div>
+      <main id="main-content">
+        <div class="content">
+          <!-- 프로젝트명, 프로젝트 기간 -->
+          <section class="work_title">
+            <div class="container stagger">
+              <div class="work_tags stagger-item">
+                <div class="work_tag"><span>Next.js</span></div>
+                <div class="work_tag"><span>Responsive Web</span></div>
+                <div class="work_tag"><span>i18next</span></div>
+              </div>
+              <div class="work_name" aria-hidden="true">
+                <span class="sr-only">DREAMPLUS</span>
+                <div class="fade-list">
+                  <div class="fade-item">D</div>
+                  <div class="fade-item">R</div>
+                  <div class="fade-item">E</div>
+                  <div class="fade-item">A</div>
+                  <div class="fade-item">M</div>
+                  <div class="fade-item">P</div>
+                  <div class="fade-item">L</div>
+                  <div class="fade-item">U</div>
+                  <div class="fade-item">S</div>
+                </div>
+              </div>
+              <div class="work_site stagger-item">
+                <a
+                  href="https://dreamplus.asia/"
+                  target="_blank"
+                  aria-label="dreamplus 페이지로 이동"
+                  >사이트 바로가기
+                  <img src="/images/icon_link.png" alt="dreamplus 미리보기" />
+                </a>
+              </div>
+              <div class="work_date">
+                <p class="stagger-item">2024.12 ~ 2025.01</p>
               </div>
             </div>
-            <div class="work_site stagger-item">
-              <a href="https://dreamplus.asia/" target="_blank"
-                >사이트 바로가기
-                <img src="/images/icon_link.png" alt="바로가기"
-              /></a>
-            </div>
-            <div class="work_date">
-              <p class="stagger-item">2024.12 ~ 2025.01</p>
-            </div>
-          </div>
-        </section>
+          </section>
 
-        <section class="work_preview stagger">
-          <div class="section_box container">
-            <div class="section_box_img dreampluspreview">
-              <div class="stagger-item">
-                <img src="/images/dreamplus/overview_img.png" alt="" />
+          <section class="work_preview stagger">
+            <div class="section_box container">
+              <div class="section_box_img dreampluspreview">
+                <div class="stagger-item">
+                  <img
+                    src="/images/dreamplus/overview_img.png"
+                    alt="Dreamplus 웹사이트 전체 화면 미리보기"
+                  />
+                </div>
+              </div>
+              <div class="section_box_desc">
+                <p class="stagger-item">DREAMPLUS 오픈이노베이션 플랫폼</p>
               </div>
             </div>
-            <div class="section_box_desc">
-              <p class="stagger-item">DREAMPLUS 오픈이노베이션 플랫폼</p>
-            </div>
-          </div>
-        </section>
+          </section>
 
-        <section class="work_overview stagger2">
-          <div class="container">
-            <h2 class="section_tit stagger-item">Overview</h2>
-            <p class="section_desc stagger-item">
-              한화생명보험주식회사의 오픈이노베이션 플랫폼 웹사이트 구축
-              프로젝트 <br />
-              글로벌 서비스 대응을 위한 다국어 지원 및 SEO 최적화를 갖춘
-              웹사이트 구현
-            </p>
-          </div>
-        </section>
-
-        <section class="work_tech stagger2">
-          <div class="container">
-            <h2 class="section_tit stagger-item">Tech Stack</h2>
-            <p class="section_desc stagger-item">
-              Next.js, React, TypeScript, Sass, Zustand, i18next
-            </p>
-          </div>
-        </section>
-
-        <section class="work_role">
-          <div class="container">
-            <div class="stagger2">
-              <h2 class="section_tit stagger-item">Role</h2>
+          <section class="work_overview stagger2">
+            <div class="container">
+              <h2 class="section_tit stagger-item">Overview</h2>
               <p class="section_desc stagger-item">
-                2인 소규모 팀으로 진행 <br />
-                Next.js SSR 특성을 활용한 검색 엔진 최적화 대응 마크업 <br />
-                대관상담/대관예약 제작 (form, datepicker) <br />
-                program, Article 제작 등
+                한화생명보험주식회사의 오픈이노베이션 플랫폼 웹사이트 구축
+                프로젝트 <br />
+                글로벌 서비스 대응을 위한 다국어 지원 및 SEO 최적화를 갖춘
+                웹사이트 구현
               </p>
             </div>
-            <div class="dreamplusrole1">
-              <div class="stagger2 section_box">
-                <div class="stagger-item fade1">
-                  <img src="/images/dreamplus/role_1.png" alt="" />
-                </div>
-              </div>
+          </section>
+
+          <section class="work_tech stagger2">
+            <div class="container">
+              <h2 class="section_tit stagger-item">Tech Stack</h2>
+              <p class="section_desc stagger-item">
+                Next.js, React, TypeScript, Sass, Zustand, i18next
+              </p>
+            </div>
+          </section>
+
+          <section class="work_role">
+            <div class="container">
               <div class="stagger2">
-                <div class="stagger-item fade2">
-                  <img src="/images/dreamplus/role_2.png" alt="" />
+                <h2 class="section_tit stagger-item">Role</h2>
+                <p class="section_desc stagger-item">
+                  2인 소규모 팀으로 진행 <br />
+                  Next.js SSR 특성을 활용한 검색 엔진 최적화 대응 마크업 <br />
+                  대관상담/대관예약 제작 (form, datepicker) <br />
+                  program, Article 제작 등
+                </p>
+              </div>
+              <div class="dreamplusrole1">
+                <div class="stagger2 section_box">
+                  <div class="stagger-item fade1">
+                    <img
+                      src="/images/dreamplus/role_1.png"
+                      alt="대관예약 페이지 화면"
+                    />
+                  </div>
                 </div>
-                <div class="stagger-item fade3">
-                  <img src="/images/dreamplus/role_3.png" alt="" />
+                <div class="stagger2">
+                  <div class="stagger-item fade2">
+                    <img
+                      src="/images/dreamplus/role_2.png"
+                      alt="대관예약 페이지 달력"
+                    />
+                  </div>
+                  <div class="stagger-item fade3">
+                    <img
+                      src="/images/dreamplus/role_3.png"
+                      alt="대관예약 페이지 예약"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="section_box stagger2">
+                <p class="section_desc stagger-item">대관예약/상세 페이지</p>
+              </div>
+              <div class="section_box stagger2">
+                <div class="section_box_img dreamplusrole2">
+                  <div class="stagger-item">
+                    <img
+                      src="/images/dreamplus/role_4.png"
+                      alt="아티클 페이지"
+                    />
+                    <p class="section_desc">아티클 페이지</p>
+                  </div>
+                  <div class="stagger-item">
+                    <img
+                      src="/images/dreamplus/role_5.png"
+                      alt="입주상담 페이지"
+                    />
+                    <p class="section_desc">입주상담 페이지</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="section_box stagger2">
-              <p class="section_desc stagger-item">대관예약/상세 페이지</p>
+          </section>
+
+          <section
+            class="work_screenshot stagger2"
+            aria-labelledby="screenshot-title"
+          >
+            <div class="container">
+              <h2 id="screenshot-title" class="section_tit stagger-item">
+                <span aria-hidden="true">* </span>Learned
+              </h2>
+              <p class="section_desc stagger-item">
+                <strong>“next.js 기반 프로젝트 경험"</strong>
+
+                SSR/CSR 혼합 렌더링 구조 구현 및 SEO 대응 마크업 설계 <br />
+                i18next 기반 국제화 환경 구축, 언어별 리소스 동적 처리로 글로벌
+                서비스 대응<br />
+                Zustand 도입으로 컴포넌트 간 데이터 흐름 효율화<br />
+                2인 소규모 팀으로 구조 설계부터 API 연동까지 전반적인 프론트엔드
+                작업 수행<br />
+                (API 데이터 미전달로 인해 최종 마무리는 업체 측에서 진행)
+              </p>
             </div>
-            <div class="section_box stagger2">
-              <div class="section_box_img dreamplusrole2">
-                <div class="stagger-item">
-                  <img src="/images/dreamplus/role_4.png" alt="" />
-                  <p class="section_desc">아티클 페이지</p>
-                </div>
-                <div class="stagger-item">
-                  <img src="/images/dreamplus/role_5.png" alt="" />
-                  <p class="section_desc">입주상담 페이지</p>
-                </div>
+          </section>
+
+          <section class="work_screenshot stagger2">
+            <div class="container">
+              <div class="section_img stagger-item">
+                <img
+                  src="/images/dreamplus/screenshot.png"
+                  alt="dreamplus screenshot"
+                />
               </div>
             </div>
-          </div>
-        </section>
-
-        <section class="work_screenshot stagger2">
-          <div class="container">
-            <h2 class="section_tit stagger-item">* Learned</h2>
-            <p class="section_desc stagger-item">
-              <b>“next.js 기반 프로젝트 경험"</b>
-
-              SSR/CSR 혼합 렌더링 구조 구현 및 SEO 대응 마크업 설계 <br />
-              i18next 기반 국제화 환경 구축, 언어별 리소스 동적 처리로 글로벌
-              서비스 대응<br />
-              Zustand 도입으로 컴포넌트 간 데이터 흐름 효율화<br />
-              2인 소규모 팀으로 구조 설계부터 API 연동까지 전반적인 프론트엔드
-              작업 수행<br />
-              (API 데이터 미전달로 인해 최종 마무리는 업체 측에서 진행)
-            </p>
-          </div>
-        </section>
-
-        <section class="work_screenshot stagger2">
-          <div class="container">
-            <div class="section_img stagger-item">
-              <img src="/images/dreamplus/screenshot.png" alt="" />
-            </div>
-          </div>
-        </section>
-      </div>
+          </section>
+        </div>
+      </main>
     </div>
 
     <script type="module" src="/src/pages/work.js"></script>

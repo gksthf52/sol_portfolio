@@ -31,7 +31,7 @@
           <a href="/" aria-label="Hansol's Portfolio 홈">HS</a>
         </h1>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="메인 메뉴">
           <ul class="nav_list">
             <li class="nav_item"><a href="/#career">Career</a></li>
             <li class="nav_item"><a href="/#works">Works</a></li>
@@ -43,9 +43,9 @@
           <a href="/about/index.html" class="about_me card">
             <div class="card_inner">
               <div class="card_front">
-                <img src="/images/me.png" alt="내 프로필 이미지" />
+                <img src="/images/me.png" alt="한솔 프로필 사진" />
               </div>
-              <div class="card_back">
+              <div class="card_back" aria-hidden="true">
                 <span>about</span>
               </div>
             </div>
@@ -62,7 +62,8 @@
               <div class="work_tag"><span>CSS</span></div>
               <div class="work_tag"><span>JQuery</span></div>
             </div>
-            <div class="work_name">
+            <div class="work_name" aria-hidden="true">
+              <span class="sr-only">goook</span>
               <div class="fade-list">
                 <div class="fade-item">g</div>
                 <div class="fade-item">o</div>
@@ -81,7 +82,10 @@
           <div class="section_box container">
             <div class="section_box_img goookpreview">
               <div class="stagger-item">
-                <img src="/images/goook/overview_img.png" alt="" />
+                <img
+                  src="/images/goook/overview_img.png"
+                  alt="goook 미리보기 이미지"
+                />
               </div>
             </div>
             <div class="section_box_desc">
@@ -121,7 +125,7 @@
             <div class="section_box stagger2">
               <div class="section_box_img goookrole1">
                 <div class="stagger-item">
-                  <img src="/images/goook/role_1.png" alt="" />
+                  <img src="/images/goook/role_1.png" alt="goook 메인 화면" />
                 </div>
               </div>
               <div class="section_box_desc stagger-item">
@@ -131,7 +135,10 @@
             <div class="section_box stagger2">
               <div class="section_box_img goookrole2">
                 <div class="stagger-item">
-                  <img src="/images/goook/role_2.png " alt="" />
+                  <img
+                    src="/images/goook/role_2.png "
+                    alt="병원/약국 찾기 지도"
+                  />
                 </div>
               </div>
               <div class="section_box_desc stagger-item">
@@ -141,7 +148,10 @@
             <div class="section_box stagger2">
               <div class="section_box_img goookrole3">
                 <div class="stagger-item">
-                  <img src="/images/goook/role_3.png" alt="" />
+                  <img
+                    src="/images/goook/role_3.png"
+                    alt="제휴 상담 화면, 채널톡 연동"
+                  />
                 </div>
               </div>
               <div class="section_box_desc stagger-item">
@@ -151,7 +161,7 @@
             <div class="section_box stagger2">
               <div class="section_box_img goookrole4">
                 <div class="stagger-item">
-                  <img src="/images/goook/role_4.png" alt="" />
+                  <img src="/images/goook/role_4.png" alt="매거진 화면" />
                 </div>
               </div>
               <div class="section_box_desc stagger-item">
@@ -161,11 +171,16 @@
           </div>
         </section>
 
-        <section class="work_screenshot stagger2">
+        <section
+          class="work_screenshot stagger2"
+          aria-labelledby="screenshot-title"
+        >
           <div class="container">
-            <h2 class="section_tit stagger-item">* Learned</h2>
+            <h2 id="screenshot-title" class="section_tit stagger-item">
+              <span aria-hidden="true">* </span>Learned
+            </h2>
             <p class="section_desc stagger-item">
-              <b>“1인 전과정 경험"</b>
+              <strong>“1인 전과정 경험"</strong>
               jQuery를 활용한 다양한 인터랙션 구현 경험 <br />
               다양한 외부 API 연동을 처음으로 경험하며 데이터 흐름 이해 및 실무
               적용 능력 습득<br />
@@ -178,7 +193,7 @@
         <section class="work_screenshot stagger2">
           <div class="container">
             <div class="section_img stagger-item">
-              <img src="/images/goook/screenshot.png" alt="" />
+              <img src="/images/goook/screenshot.png" alt="goook screenshot" />
             </div>
           </div>
         </section>

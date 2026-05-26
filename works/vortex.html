@@ -31,7 +31,7 @@
           <a href="/" aria-label="Hansol's Portfolio 홈">HS</a>
         </h1>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="메인 메뉴">
           <ul class="nav_list">
             <li class="nav_item"><a href="/#career">Career</a></li>
             <li class="nav_item"><a href="/#works">Works</a></li>
@@ -40,12 +40,16 @@
         </nav>
 
         <div class="util">
-          <a href="/about/index.html" class="about_me card">
+          <a
+            href="/about/index.html"
+            class="about_me card"
+            aria-label="About me 페이지로 이동"
+          >
             <div class="card_inner">
               <div class="card_front">
-                <img src="/images/me.png" alt="내 프로필 이미지" />
+                <img src="/images/me.png" alt="한솔 프로필 사진" />
               </div>
-              <div class="card_back">
+              <div class="card_back" aria-hidden="true">
                 <span>about</span>
               </div>
             </div>
@@ -62,7 +66,8 @@
               <div class="work_tag"><span>component</span></div>
               <div class="work_tag"><span>Responsive Web</span></div>
             </div>
-            <div class="work_name">
+            <div class="work_name" aria-hidden="true">
+              <span class="sr-only">vortexgaming</span>
               <div class="fade-list">
                 <div class="fade-item">V</div>
                 <div class="fade-item">o</div>
@@ -79,9 +84,12 @@
               </div>
             </div>
             <div class="work_site stagger-item">
-              <a href="https://vortexgaming.io/" target="_blank"
+              <a
+                href="https://vortexgaming.io/"
+                target="_blank"
+                aria-label="vortexgaming 페이지로 이동"
                 >사이트 바로가기
-                <img src="/images/icon_link.png" alt="바로가기"
+                <img src="/images/icon_link.png" alt="vortexgaming 미리보기"
               /></a>
             </div>
             <div class="work_date">
@@ -94,7 +102,10 @@
           <div class="section_box container">
             <div class="section_box_img vortexpreview">
               <div class="stagger-item">
-                <img src="/images/vortex/overview_img.png" alt="" />
+                <img
+                  src="/images/vortex/overview_img.png"
+                  alt="vortex 웹사이트 화면 미리보기"
+                />
               </div>
             </div>
             <div class="section_box_desc">
@@ -138,7 +149,10 @@
             <div class="section_box stagger2">
               <div class="section_box_img vortexrole1">
                 <div class="stagger-item">
-                  <img src="/images/vortex/role1.png" alt="" />
+                  <img
+                    src="/images/vortex/role1.png"
+                    alt="vortex 메인화면 컴포넌트 영역 표시"
+                  />
                   <p class="section_desc">메인 사이드 영역 컴포넌트 제작</p>
                 </div>
               </div>
@@ -146,11 +160,17 @@
             <div class="section_box stagger">
               <div class="section_box_img vortexrole2">
                 <div class="stagger-item">
-                  <img src="/images/vortex/role2.png" alt="" />
+                  <img
+                    src="/images/vortex/role2.png"
+                    alt="vortex 포스트 작성 페이지"
+                  />
                   <p class="section_desc">포스트 작성 페이지</p>
                 </div>
                 <div class="stagger-item">
-                  <img src="/images/vortex/role3.png" alt="" />
+                  <img
+                    src="/images/vortex/role3.png"
+                    alt="vortex 피드 포스트 컴포넌트"
+                  />
                   <p class="section_desc">
                     피드 포스트 <br class="is-mobile" />컴포넌트
                   </p>
@@ -160,11 +180,16 @@
           </div>
         </section>
 
-        <section class="work_screenshot stagger2">
+        <section
+          class="work_screenshot stagger2"
+          aria-labelledby="screenshot-title"
+        >
           <div class="container">
-            <h2 class="section_tit stagger-item">* Learned</h2>
+            <h2 id="screenshot-title" class="section_tit stagger-item">
+              <span aria-hidden="true">* </span>Learned
+            </h2>
             <p class="section_desc stagger-item">
-              <b>“첫 react 프로젝트"</b>
+              <strong>“첫 react 프로젝트"</strong>
 
               기존 페이지 단위 퍼블리싱에서 벗어나 React 컴포넌트 기반 개발
               방식을 처음으로 경험 <br />
@@ -180,7 +205,7 @@
         <section class="work_screenshot stagger2">
           <div class="container">
             <div class="section_img stagger-item">
-              <img src="/images/vortex/screenshot.png" alt="" />
+              <img src="/images/vortex/screenshot.png" alt="vortex 스크린샷" />
             </div>
           </div>
         </section>

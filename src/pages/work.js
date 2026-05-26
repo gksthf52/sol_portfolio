@@ -13,6 +13,7 @@ import { staggerAni } from "../animations/contentStagger.js";
 gsap.registerPlugin(ScrollTrigger);
 
 const initWork = async () => {
+  // 깜빡이 현상 대비
   document.documentElement.style.visibility = "visible";
 
   initLenis();

@@ -31,7 +31,7 @@
           <a href="/" aria-label="Hansol's Portfolio 홈">HS</a>
         </h1>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="메인 메뉴">
           <ul class="nav_list">
             <li class="nav_item"><a href="/#career">Career</a></li>
             <li class="nav_item"><a href="/#works">Works</a></li>
@@ -43,9 +43,9 @@
           <a href="/about/index.html" class="about_me card">
             <div class="card_inner">
               <div class="card_front">
-                <img src="/images/me.png" alt="내 프로필 이미지" />
+                <img src="/images/me.png" alt="한솔 프로필 사진" />
               </div>
-              <div class="card_back">
+              <div class="card_back" aria-hidden="true">
                 <span>about</span>
               </div>
             </div>
@@ -62,7 +62,8 @@
               <div class="work_tag"><span>frontend</span></div>
               <div class="work_tag"><span>mobile</span></div>
             </div>
-            <div class="work_name">
+            <div class="work_name" aria-hidden="true">
+              <span class="sr-only">lg life</span>
               <div class="fade-list">
                 <div class="fade-item">L</div>
                 <div class="fade-item">G</div>
@@ -83,7 +84,10 @@
           <div class="section_box container">
             <div class="section_box_img lglifepreview">
               <div class="stagger-item">
-                <img src="/images/lglife/overview_img.png" alt="" />
+                <img
+                  src="/images/lglife/overview_img.png"
+                  alt="lglife 웹사이트 화면 미리보기"
+                />
               </div>
             </div>
             <div class="section_box_desc">
@@ -128,7 +132,7 @@
             <div class="section_box stagger2">
               <div class="section_box_img lgliferole1">
                 <div class="stagger-item">
-                  <img src="/images/lglife/role_1.png" alt="" />
+                  <img src="/images/lglife/role_1.png" alt="lglife 뉴스레터" />
                 </div>
               </div>
               <div class="section_box_desc stagger-item">
@@ -138,17 +142,23 @@
             <div class="section_box stagger2">
               <div class="section_box_img lgliferole2">
                 <div class="stagger-item">
-                  <img src="/images/lglife/role_2.png" alt="" />
+                  <img
+                    src="/images/lglife/role_2.png"
+                    alt="lglife 커뮤니티 페이지"
+                  />
                 </div>
               </div>
               <div class="section_box_desc stagger-item">
-                <p>쇼신규 커뮤니티 페이지 제작</p>
+                <p>신규 커뮤니티 페이지 제작</p>
               </div>
             </div>
             <div class="section_box stagger2">
               <div class="section_box_img lgliferole3">
                 <div class="stagger-item">
-                  <img src="/images/lglife/role_3.png " alt="" />
+                  <img
+                    src="/images/lglife/role_3.png "
+                    alt="댓글 멘션 이미지"
+                  />
                 </div>
               </div>
               <div class="section_box_desc stagger-item">
@@ -158,7 +168,10 @@
             <div class="section_box stagger2">
               <div class="section_box_img lgliferole4">
                 <div class="stagger-item">
-                  <img src="/images/lglife/role_4.png " alt="" />
+                  <img
+                    src="/images/lglife/role_4.png "
+                    alt="(주)LG 홈페이지 이미지"
+                  />
                 </div>
               </div>
               <div class="section_box_desc stagger-item">
@@ -168,11 +181,16 @@
           </div>
         </section>
 
-        <section class="work_screenshot stagger2">
+        <section
+          class="work_screenshot stagger2"
+          aria-labelledby="screenshot-title"
+        >
           <div class="container">
-            <h2 class="section_tit stagger-item">* Learned</h2>
+            <h2 id="screenshot-title" class="section_tit stagger-item">
+              <span aria-hidden="true">* </span>Learned
+            </h2>
             <p class="section_desc stagger-item">
-              <b>“프로젝트 장기 운영 경험"</b>
+              <strong>“프로젝트 장기 운영 경험"</strong>
               jenkins 배포 환경 경험 <br />
               3년 10개월간 퍼블리싱 메인 담당자로서 반복 업무를 수행하며, 작업
               효율화를 위한 템플릿화 및 프로세스 개선을 지속적으로 고민하고 적용
@@ -186,7 +204,10 @@
         <section class="work_screenshot stagger2">
           <div class="container">
             <div class="section_img stagger-item">
-              <img src="/images/lglife/screenshot.png" alt="" />
+              <img
+                src="/images/lglife/screenshot.png"
+                alt="lglife screenshot"
+              />
             </div>
           </div>
         </section>

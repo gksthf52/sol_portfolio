@@ -22,10 +22,10 @@
   </head>
   <body>
     <!-- 스킵 네비게이션 -->
-    <a href="#hero" class="skip-nav">본문 바로가기</a>
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
     <!-- 인트로 애니메이션 영역 -->
-    <div id="intro">
+    <div id="intro" aria-hidden="true">
       <div class="text_box">
         <div class="text_box_area">
           <span class="name">Hansol</span>
@@ -36,18 +36,18 @@
     </div>
 
     <!-- 페이지 전환 -->
-    <div class="page_transition"></div>
+    <div class="page_transition" aria-hidden="true"></div>
 
     <!-- 본문 영역 -->
     <div id="wrap" class="wrap" style="visibility: hidden">
       <header class="header">
         <h1 class="logo">
-          <a href="#" class="home-link" aria-label="Hansol's Portfolio 홈"
+          <a href="/" class="home-link" aria-label="한솔 포트폴리오 홈으로 이동"
             >HS</a
           >
         </h1>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="메인 메뉴">
           <ul class="nav_list">
             <li class="nav_item"><a href="#career">Career</a></li>
             <li class="nav_item"><a href="#works">Works</a></li>
@@ -56,12 +56,16 @@
         </nav>
 
         <div class="util">
-          <a href="/about/index.html" class="about_me card">
+          <a
+            href="/about/index.html"
+            class="about_me card"
+            aria-label="About me 페이지로 이동"
+          >
             <div class="card_inner">
               <div class="card_front">
-                <img src="/images/me.png" alt="내 프로필 이미지" />
+                <img src="/images/me.png" alt="한솔 프로필 이미지" />
               </div>
-              <div class="card_back">
+              <div class="card_back" aria-hidden="true">
                 <span>about</span>
               </div>
             </div>
@@ -69,139 +73,203 @@
         </div>
       </header>
 
-      <!-- Hero -->
-      <section id="hero">
-        <div class="container">
-          <div class="center_box">
-            <div class="fade-list">
-              <div class="fade-item">H</div>
-              <div class="fade-item">A</div>
-              <div class="fade-item">N</div>
-              <div class="fade-item">S</div>
-              <div class="fade-item">O</div>
-              <div class="fade-item">L</div>
-              <div class="fade-item">'</div>
-              <div class="fade-item">S</div>
-            </div>
-            <div class="fade-list">
-              <div class="fade-item">P</div>
-              <div class="fade-item">O</div>
-              <div class="fade-item">R</div>
-              <div class="fade-item">T</div>
-              <div class="fade-item">F</div>
-              <div class="fade-item">O</div>
-              <div class="fade-item">L</div>
-              <div class="fade-item">I</div>
-              <div class="fade-item">O</div>
+      <main id="mian-content" aria-labelledby="hero-title">
+        <!-- Hero -->
+        <section id="hero">
+          <div class="container">
+            <h2 id="hero-title" class="sr-only">한솔 포트폴리오 소개</h2>
+            <div class="center_box" aria-hidden="true">
+              <div class="fade-list">
+                <div class="fade-item">H</div>
+                <div class="fade-item">A</div>
+                <div class="fade-item">N</div>
+                <div class="fade-item">S</div>
+                <div class="fade-item">O</div>
+                <div class="fade-item">L</div>
+                <div class="fade-item">'</div>
+                <div class="fade-item">S</div>
+              </div>
+              <div class="fade-list">
+                <div class="fade-item">P</div>
+                <div class="fade-item">O</div>
+                <div class="fade-item">R</div>
+                <div class="fade-item">T</div>
+                <div class="fade-item">F</div>
+                <div class="fade-item">O</div>
+                <div class="fade-item">L</div>
+                <div class="fade-item">I</div>
+                <div class="fade-item">O</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="bottom_text">
-          <p>제 포트폴리오 사이트에 방문해주셔서 감사합니다.</p>
-        </div>
-      </section>
-
-      <!-- Career -->
-      <section id="career">
-        <div class="container">
-          <h2 class="section-title">career <span>&lpar;6년&rpar;</span></h2>
-          <div class="career_list stagger">
-            <ul>
-              <li class="career_item stagger-item">
-                <p class="career_tit">HNINE<span>2022.01~2025.10</span></p>
-                <div class="career_content">
-                  <img src="/images/main/work_dreamplus.png" alt="이미지" />
-                </div>
-              </li>
-              <li class="career_item stagger-item">
-                <p class="career_tit">EDULAB<span>2021.04~2021.10</span></p>
-                <div class="career_content">
-                  <img src="/images/main/career_edulab.png" alt="이미지" />
-                </div>
-              </li>
-              <li class="career_item stagger-item">
-                <p class="career_tit">THE DAOM<span>2018.11~2020.05</span></p>
-                <div class="career_content">
-                  <img src="/images/main/career_daom.png" alt="이미지" />
-                </div>
-              </li>
-            </ul>
+          <div class="bottom_text">
+            <p>제 포트폴리오 사이트에 방문해주셔서 감사합니다.</p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Works -->
-      <section id="works">
-        <div class="container stagger">
-          <h2 class="section-title stagger-item">works</h2>
-          <div class="works_list">
-            <ul class="stagger-side">
-              <li class="left">
-                <a href="/works/hence.html">
-                  <img src="/images/main/work_hence.png" alt="이미지" />
-                  <div class="dim_content">
-                    <div class="dim"></div>
-                    <div class="dim_box">
-                      <span>#HNINE</span>
-                      <span>#구축</span>
-                      <span>#모바일앱</span>
-                    </div>
+        <!-- Career -->
+        <section id="career" aria-labelledby="career-title">
+          <div class="container">
+            <h2 id="career-title" class="section-title">
+              career
+              <span aria-label="총 경력 6년"> &lpar;6년&rpar; </span>
+            </h2>
+            <div class="career_list stagger">
+              <ul>
+                <li class="career_item stagger-item">
+                  <p class="career_tit">HNINE<span>2022.01~2025.10</span></p>
+                  <div class="career_content">
+                    <img
+                      src="/images/main/work_dreamplus.png"
+                      alt="HNINE 프로젝트 작업 화면"
+                    />
                   </div>
-                </a>
-              </li>
-              <li class="right">
-                <a href="/works/vortex.html">
-                  <img src="/images/main/work_vortex.png" alt="이미지" />
-                  <div class="dim_content">
-                    <div class="dim"></div>
-                    <div class="dim_box">
-                      <span>#HNINE</span>
-                      <span>#구축</span>
-                      <span>#커뮤니티</span>
-                    </div>
+                </li>
+                <li class="career_item stagger-item">
+                  <p class="career_tit">EDULAB<span>2021.04~2021.10</span></p>
+                  <div class="career_content">
+                    <img
+                      src="/images/main/career_edulab.png"
+                      alt="EDULAB 프로젝트 작업 화면"
+                    />
                   </div>
-                </a>
-              </li>
-              <li class="left">
-                <a href="/works/lglife.html">
-                  <img src="/images/main/work_lglife.png" alt="이미지" />
-                  <div class="dim_content">
-                    <div class="dim"></div>
-                    <div class="dim_box">
-                      <span>#HNINE</span>
-                      <span>#운영</span>
-                      <span>#임직원커뮤니티</span>
-                    </div>
+                </li>
+                <li class="career_item stagger-item">
+                  <p class="career_tit">THE DAOM<span>2018.11~2020.05</span></p>
+                  <div class="career_content">
+                    <img
+                      src="/images/main/career_daom.png"
+                      alt="THE DAOM 프로젝트 작업 화면"
+                    />
                   </div>
-                </a>
-              </li>
-              <li class="right">
-                <a href="/works/dreamplus.html">
-                  <img src="/images/main/work_dreamplus.png" alt="이미지" />
-                  <div class="dim_content">
-                    <div class="dim"></div>
-                    <div class="dim_box">
-                      <span>#HNINE</span>
-                      <span>#구축</span>
-                      <span>#Next.js</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Works -->
+        <section id="works" aria-labelledby="works-title">
+          <div class="container stagger">
+            <h2 id="works-title" class="section-title stagger-item">works</h2>
+            <div class="works_list">
+              <ul class="stagger-side">
+                <li class="left">
+                  <a
+                    href="/works/hence.html"
+                    aria-label="Hence 프로젝트 상세보기"
+                  >
+                    <img
+                      src="/images/main/work_hence.png"
+                      alt="hence 프로젝트 미리보기"
+                    />
+                    <div class="dim_content">
+                      <div class="dim"></div>
+                      <div class="dim_box">
+                        <span>#HNINE</span>
+                        <span>#구축</span>
+                        <span>#모바일앱</span>
+                      </div>
                     </div>
-                  </div>
-                </a>
-              </li>
-              <li class="left">
-                <a href="/works/samsung.html">
-                  <img src="/images/main/work_samsung3.png" alt="이미지" />
-                  <div class="dim_content">
-                    <div class="dim"></div>
-                    <div class="dim_box">
-                      <span>#HNINE</span>
-                      <span>#프로토타입</span>
-                      <span>#빠른대응</span>
+                  </a>
+                </li>
+                <li class="right">
+                  <a
+                    href="/works/vortex.html"
+                    aria-label="vortex 프로젝트 상세보기"
+                  >
+                    <img
+                      src="/images/main/work_vortex.png"
+                      alt="vortex 프로젝트 미리보기"
+                    />
+                    <div class="dim_content">
+                      <div class="dim"></div>
+                      <div class="dim_box">
+                        <span>#HNINE</span>
+                        <span>#구축</span>
+                        <span>#커뮤니티</span>
+                      </div>
                     </div>
-                  </div>
-                </a>
-              </li>
-              <!-- <li class="right">
+                  </a>
+                </li>
+                <li class="left">
+                  <a
+                    href="/works/lglife.html"
+                    aria-label="lglife 프로젝트 상세보기"
+                  >
+                    <img
+                      src="/images/main/work_lglife.png"
+                      alt="lglife 프로젝트 미리보기"
+                    />
+                    <div class="dim_content">
+                      <div class="dim"></div>
+                      <div class="dim_box">
+                        <span>#HNINE</span>
+                        <span>#운영</span>
+                        <span>#임직원커뮤니티</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="right">
+                  <a
+                    href="/works/dreamplus.html"
+                    aria-label="dreamplus 프로젝트 상세보기"
+                  >
+                    <img
+                      src="/images/main/work_dreamplus.png"
+                      alt="dreamplus 프로젝트 미리보기"
+                    />
+                    <div class="dim_content">
+                      <div class="dim"></div>
+                      <div class="dim_box">
+                        <span>#HNINE</span>
+                        <span>#구축</span>
+                        <span>#Next.js</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="left">
+                  <a
+                    href="/works/samsung.html"
+                    aria-label="samsung 프로젝트 상세보기"
+                  >
+                    <img
+                      src="/images/main/work_samsung3.png"
+                      alt="samsung 프로젝트 미리보기"
+                    />
+                    <div class="dim_content">
+                      <div class="dim"></div>
+                      <div class="dim_box">
+                        <span>#HNINE</span>
+                        <span>#프로토타입</span>
+                        <span>#빠른대응</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="right">
+                  <a
+                    href="/works/goook.html"
+                    aria-label="goook 프로젝트 상세보기"
+                  >
+                    <img
+                      src="/images/main/work_goook.png"
+                      alt="samsung 프로젝트 미리보기"
+                    />
+                    <div class="dim_content">
+                      <div class="dim"></div>
+                      <div class="dim_box">
+                        <span>#THEDAOM</span>
+                        <span>#구축</span>
+                        <span>#앱</span>
+                        <span>#웹</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <!-- <li class="left">
                 <a href="/works/interactiveClone.html">
                   <img
                     src="/images/main/work_interactive.png"
@@ -218,106 +286,103 @@
                   </div>
                 </a>
               </li> -->
-              <li class="right">
-                <a href="/works/goook.html">
-                  <img src="/images/main/work_goook.png" alt="이미지" />
-                  <div class="dim_content">
-                    <div class="dim"></div>
-                    <div class="dim_box">
-                      <span>#THEDAOM</span>
-                      <span>#구축</span>
-                      <span>#앱</span>
-                      <span>#웹</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            </ul>
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Skills -->
-      <section id="skills">
-        <div class="container stagger">
-          <h2 class="section-title stagger-item">Skills</h2>
-          <div class="skills_list stagger-item skills_swiper">
-            <ul class="swiper-wrapper">
-              <li class="skills_item swiper-slide">
-                <img src="/images/skills/html5.svg" alt="html5" />
-              </li>
-              <li class="skills_item swiper-slide">
-                <img src="/images/skills/css3.svg" alt="css3" />
-              </li>
-              <li class="skills_item swiper-slide">
-                <img src="/images/skills/sass.svg" alt="sass" />
-              </li>
-              <li class="skills_item swiper-slide">
-                <img src="/images/skills/tailwind_css.svg" alt="tailwind_css" />
-              </li>
-              <li class="skills_item swiper-slide">
-                <img src="/images/skills/jquery.svg" alt="jquery" />
-              </li>
-              <li class="skills_item swiper-slide">
-                <img src="/images/skills/js.svg" alt="javascript" />
-              </li>
-              <li class="skills_item swiper-slide">
-                <img src="/images/skills/typescript.svg" alt="typescript" />
-              </li>
-              <li class="skills_item swiper-slide">
-                <img src="/images/skills/react.svg" alt="react" />
-              </li>
-              <li class="skills_item swiper-slide">
-                <img src="/images/skills/next.js.svg" alt="next.js" />
-              </li>
-              <li class="skills_item swiper-slide">
-                <img src="/images/skills/vue.js.svg" alt="vue.js" />
-              </li>
-              <li class="skills_item swiper-slide">
-                <img src="/images/skills/vite.js.svg" alt="vite.js" />
-              </li>
-              <li class="skills_item swiper-slide">
-                <img src="/images/skills/gulp.js.svg" alt="gulp.js" />
-              </li>
-              <li class="skills_item swiper-slide">
-                <img src="/images/skills/gatsby.svg" alt="gatsby" />
-              </li>
-              <li class="skills_item swiper-slide">
-                <img src="/images/skills/git.svg" alt="git" />
-              </li>
-              <li class="skills_item swiper-slide">
-                <img src="/images/skills/sourcetree.svg" alt="sourcetree" />
-              </li>
-              <li class="skills_item swiper-slide">
-                <img src="/images/skills/jira.svg" alt="jira" />
-              </li>
-            </ul>
+        <!-- Skills -->
+        <section id="skills" aria-labelledby="skills-title">
+          <div class="container stagger">
+            <h2 id="skills-title" class="section-title stagger-item">Skills</h2>
+            <div
+              class="skills_list stagger-item skills_swiper"
+              aria-label="보유 기술 목록"
+            >
+              <ul class="swiper-wrapper">
+                <li class="skills_item swiper-slide">
+                  <img src="/images/skills/html5.svg" alt="html5" />
+                </li>
+                <li class="skills_item swiper-slide">
+                  <img src="/images/skills/css3.svg" alt="css3" />
+                </li>
+                <li class="skills_item swiper-slide">
+                  <img src="/images/skills/sass.svg" alt="sass" />
+                </li>
+                <li class="skills_item swiper-slide">
+                  <img
+                    src="/images/skills/tailwind_css.svg"
+                    alt="tailwind_css"
+                  />
+                </li>
+                <li class="skills_item swiper-slide">
+                  <img src="/images/skills/jquery.svg" alt="jquery" />
+                </li>
+                <li class="skills_item swiper-slide">
+                  <img src="/images/skills/js.svg" alt="javascript" />
+                </li>
+                <li class="skills_item swiper-slide">
+                  <img src="/images/skills/typescript.svg" alt="typescript" />
+                </li>
+                <li class="skills_item swiper-slide">
+                  <img src="/images/skills/react.svg" alt="react" />
+                </li>
+                <li class="skills_item swiper-slide">
+                  <img src="/images/skills/next.js.svg" alt="next.js" />
+                </li>
+                <li class="skills_item swiper-slide">
+                  <img src="/images/skills/vue.js.svg" alt="vue.js" />
+                </li>
+                <li class="skills_item swiper-slide">
+                  <img src="/images/skills/vite.js.svg" alt="vite.js" />
+                </li>
+                <li class="skills_item swiper-slide">
+                  <img src="/images/skills/gulp.js.svg" alt="gulp.js" />
+                </li>
+                <li class="skills_item swiper-slide">
+                  <img src="/images/skills/gatsby.svg" alt="gatsby" />
+                </li>
+                <li class="skills_item swiper-slide">
+                  <img src="/images/skills/git.svg" alt="git" />
+                </li>
+                <li class="skills_item swiper-slide">
+                  <img src="/images/skills/sourcetree.svg" alt="sourcetree" />
+                </li>
+                <li class="skills_item swiper-slide">
+                  <img src="/images/skills/jira.svg" alt="jira" />
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       <footer class="footer" role="contentinfo">
         <div class="container stagger">
           <div class="footer_top stagger-item">
-            <nav class="footer_nav" aria-label="푸터 네비게이션">
+            <nav class="footer_nav" aria-label="푸터 메뉴">
               <ul>
                 <li><a href="#career">career</a></li>
                 <li><a href="#works">works</a></li>
                 <li><a href="#skills">skills</a></li>
               </ul>
             </nav>
-            <ul class="footer_links">
-              <li>
-                <a href="mailto:dev.solh52@gmail.com" aria-label="이메일 보내기"
-                  >Email: dev.solh52@gmail.com</a
-                >
-              </li>
-              <li>
-                <a href="tel:+821083776972" aria-label="전화 걸기"
-                  >Tel: 010-8377-6972</a
-                >
-              </li>
-            </ul>
+            <address>
+              <ul class="footer_links">
+                <li>
+                  <a
+                    href="mailto:dev.solh52@gmail.com"
+                    aria-label="이메일 보내기"
+                    >Email: dev.solh52@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <a href="tel:+821083776972" aria-label="전화 걸기"
+                    >Tel: 010-8377-6972</a
+                  >
+                </li>
+              </ul>
+            </address>
           </div>
 
           <!-- 하단 정보 -->
