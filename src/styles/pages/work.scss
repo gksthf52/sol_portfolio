@@ -132,12 +132,12 @@ section {
   }
 
   .work_site {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 20px;
-    gap: 4px;
     a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
       @include fontStyle("Noto sans KR", 12px);
     }
     img {
