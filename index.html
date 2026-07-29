@@ -12,7 +12,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/me.png" />
 
     <!-- google fonts -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -73,7 +72,7 @@
         </div>
       </header>
 
-      <main id="mian-content" aria-labelledby="hero-title">
+      <main id="main-content" aria-labelledby="hero-title" tabindex="-1">
         <!-- Hero -->
         <section id="hero">
           <div class="container">
@@ -117,7 +116,11 @@
             <div class="career_list stagger">
               <ul>
                 <li class="career_item stagger-item">
-                  <p class="career_tit">HNINE<span>2022.01~2025.10</span></p>
+                  <p class="career_tit">
+                    HNINE<span aria-label="2022년 1월부터 2025년 10월까지"
+                      >2022.01~2025.10</span
+                    >
+                  </p>
                   <div class="career_content">
                     <img
                       src="/images/main/work_dreamplus.png"
@@ -126,7 +129,11 @@
                   </div>
                 </li>
                 <li class="career_item stagger-item">
-                  <p class="career_tit">EDULAB<span>2021.04~2021.10</span></p>
+                  <p class="career_tit">
+                    EDULAB<span aria-label="2021년 4월부터 2021년 10월까지"
+                      >2021.04~2021.10</span
+                    >
+                  </p>
                   <div class="career_content">
                     <img
                       src="/images/main/career_edulab.png"
@@ -135,7 +142,11 @@
                   </div>
                 </li>
                 <li class="career_item stagger-item">
-                  <p class="career_tit">THE DAOM<span>2018.11~2020.05</span></p>
+                  <p class="career_tit">
+                    THE DAOM<span aria-label="2018년 11월부터 2020년 5월까지"
+                      >2018.11~2020.05</span
+                    >
+                  </p>
                   <div class="career_content">
                     <img
                       src="/images/main/career_daom.png"
@@ -164,8 +175,8 @@
                       alt="hence 프로젝트 미리보기"
                     />
                     <div class="dim_content">
-                      <div class="dim"></div>
-                      <div class="dim_box">
+                      <div class="dim" aria-hidden="true"></div>
+                      <div class="dim_box" aria-hidden="true">
                         <span>#HNINE</span>
                         <span>#구축</span>
                         <span>#모바일앱</span>
@@ -183,8 +194,8 @@
                       alt="vortex 프로젝트 미리보기"
                     />
                     <div class="dim_content">
-                      <div class="dim"></div>
-                      <div class="dim_box">
+                      <div class="dim" aria-hidden="true"></div>
+                      <div class="dim_box" aria-hidden="true">
                         <span>#HNINE</span>
                         <span>#구축</span>
                         <span>#커뮤니티</span>
@@ -202,8 +213,8 @@
                       alt="lglife 프로젝트 미리보기"
                     />
                     <div class="dim_content">
-                      <div class="dim"></div>
-                      <div class="dim_box">
+                      <div class="dim" aria-hidden="true"></div>
+                      <div class="dim_box" aria-hidden="true">
                         <span>#HNINE</span>
                         <span>#운영</span>
                         <span>#임직원커뮤니티</span>
@@ -221,8 +232,8 @@
                       alt="dreamplus 프로젝트 미리보기"
                     />
                     <div class="dim_content">
-                      <div class="dim"></div>
-                      <div class="dim_box">
+                      <div class="dim" aria-hidden="true"></div>
+                      <div class="dim_box" aria-hidden="true">
                         <span>#HNINE</span>
                         <span>#구축</span>
                         <span>#Next.js</span>
@@ -240,8 +251,8 @@
                       alt="samsung 프로젝트 미리보기"
                     />
                     <div class="dim_content">
-                      <div class="dim"></div>
-                      <div class="dim_box">
+                      <div class="dim" aria-hidden="true"></div>
+                      <div class="dim_box" aria-hidden="true">
                         <span>#HNINE</span>
                         <span>#프로토타입</span>
                         <span>#빠른대응</span>
@@ -256,11 +267,11 @@
                   >
                     <img
                       src="/images/main/work_goook.png"
-                      alt="samsung 프로젝트 미리보기"
+                      alt="goook 프로젝트 미리보기"
                     />
                     <div class="dim_content">
-                      <div class="dim"></div>
-                      <div class="dim_box">
+                      <div class="dim" aria-hidden="true"></div>
+                      <div class="dim_box" aria-hidden="true">
                         <span>#THEDAOM</span>
                         <span>#구축</span>
                         <span>#앱</span>
@@ -295,11 +306,8 @@
         <section id="skills" aria-labelledby="skills-title">
           <div class="container stagger">
             <h2 id="skills-title" class="section-title stagger-item">Skills</h2>
-            <div
-              class="skills_list stagger-item skills_swiper"
-              aria-label="보유 기술 목록"
-            >
-              <ul class="swiper-wrapper">
+            <div class="skills_list stagger-item skills_swiper">
+              <ul class="swiper-wrapper" aria-label="보유 기술 목록">
                 <li class="skills_item swiper-slide">
                   <img src="/images/skills/html5.svg" alt="html5" />
                 </li>
@@ -372,12 +380,12 @@
                 <li>
                   <a
                     href="mailto:dev.solh52@gmail.com"
-                    aria-label="이메일 보내기"
+                    aria-label="이메일 보내기: dev.solh52@gmail.com"
                     >Email: dev.solh52@gmail.com</a
                   >
                 </li>
                 <li>
-                  <a href="tel:+821083776972" aria-label="전화 걸기"
+                  <a href="tel:+821083776972" aria-label="전화 걸기: 010-8377-6972"
                     >Tel: 010-8377-6972</a
                   >
                 </li>
